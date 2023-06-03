@@ -11,6 +11,7 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
+				"navigationBarBackgroundColor":"#fff",
                 "enablePullDownRefresh": false
             }
             
@@ -20,10 +21,27 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
+				"navigationBarBackgroundColor":"#fff",
                 "enablePullDownRefresh": false
             }
             
         }
+		,{
+			"path" : "pages/changepassword/changepasswdbyphone",
+			"style" :
+			{
+			    "navigationBarTitleText": "",
+			    "enablePullDownRefresh": false
+			}
+		}
+		,{
+			"path" : "pages/changepassword/sendcode",
+			"style" :
+			{
+			    "navigationBarTitleText": "",
+			    "enablePullDownRefresh": false
+			}
+		}
         ,{
             "path" : "pages/register/register",
             "style" :                                                                                    
@@ -33,11 +51,23 @@
             }
             
         }
+        ,{
+            "path" : "pages/passwdupdated/passwdupdated",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#F8F8F8"
 	},
 	"uniIdRouter": {}

@@ -773,7 +773,7 @@
   display: inline-block;
   border: 1px;
   border-color: #D9D9D9;
-  border-style: solid;
+  border-style: dotted;
   flex-grow: 1;
 }
 .line-text[data-v-e4e4508d]::before {
@@ -781,8 +781,34 @@
   display: inline-block;
   border: 1px;
   border-color: #D9D9D9;
-  border-style: solid;
+  border-style: dotted;
   flex-grow: 1;
+}
+.platforms-box[data-v-e4e4508d] {
+  width: 100%;
+  margin-top: 1.75rem;
+}
+.platforms-box uni-button[data-v-e4e4508d] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.95625rem;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  border: 0;
+  background-color: #fff;
+}
+.platforms-box uni-button uni-image[data-v-e4e4508d] {
+  height: 1.3125rem;
+  margin-right: 0.4375rem;
+}
+.qq-box[data-v-e4e4508d] {
+  border-radius: 12px;
+  height: 2.95625rem;
+}
+.weChat-box[data-v-e4e4508d] {
+  border-radius: 12px;
+  margin-top: 1.09563rem;
 }
 .login-footer[data-v-e4e4508d] {
   width: 100%;

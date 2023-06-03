@@ -40,6 +40,15 @@
 							<text>Or</text>
 						</view>
 					</view>
+					
+					<view class="platforms-box">
+						<view class="qq-box">
+							<button><image src="../../static/images/qq.svg" mode="heightFix"></image>qq登录</button>
+						</view>
+						<view class="weChat-box">
+							<button><image src="../../static/images/wechat.svg" mode="heightFix"></image>微信登录</button>
+						</view>
+					</view>
 				</view>
 			</view>
 			<view class="login-footer">
@@ -164,7 +173,7 @@
 			display: inline-block;
 			border: 1px;
 			border-color: #D9D9D9;;
-			border-style: solid;
+			border-style: dotted;
 			flex-grow: 1;
 		}
 		&::before{
@@ -172,9 +181,45 @@
 			display: inline-block;
 			border: 1px;
 			border-color: #D9D9D9;;
-			border-style: solid;
+			border-style: dotted;
 			flex-grow: 1;
 		}
+	}
+	
+	.platforms-box{
+		width: 100%;
+		margin-top: 56rpx;
+		button{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height:94.6rpx;
+			font-size: 28rpx;
+			line-height: 42rpx;
+			border: 0;
+			background-color: #fff;
+			&{
+				image{
+					// display: inline-block;
+					height: 42rpx;
+					margin-right: 14rpx;
+				}
+			}
+
+		}
+		
+	}
+	
+	.qq-box{
+		// border: 1px solid #EDEDED;
+		border-radius: 12px;
+		height: 94.6rpx;
+	}
+	
+	.weChat-box{
+		// border: 1px solid #EDEDED;
+		border-radius: 12px;
+		margin-top: 35.06rpx;
 	}
 	
 	
