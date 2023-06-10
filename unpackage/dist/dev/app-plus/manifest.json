@@ -75,7 +75,6 @@
       "style": "dark",
       "background": "#fff"
     },
-    "arguments": "{\"path\":\"pages/changepassword/sendcode\"}",
     "uniStatistics": {
       "enable": false
     },

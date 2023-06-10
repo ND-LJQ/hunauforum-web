@@ -10,6 +10,9 @@
  *
  * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
  */
+[data-v-bdd8c54a]:export {
+  borderActiveColor: #42b883;
+}
 /* 颜色变量 */
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -83,6 +86,10 @@ uni-view[data-v-bdd8c54a], uni-scroll-view[data-v-bdd8c54a], uni-swiper-item[dat
  *
  * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
  */
+[data-v-d613efc9]:export {
+  borderActiveColor: #42b883;
+}
+
 /* 颜色变量 */
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -99,7 +106,6 @@ uni-view[data-v-bdd8c54a], uni-scroll-view[data-v-bdd8c54a], uni-swiper-item[dat
 .sendcode-body[data-v-d613efc9] {
   display: flex;
   justify-content: center;
-  font-family: "Poppins", "FZZhunYuan-M02S";
 }
 .container[data-v-d613efc9] {
   display: flex;

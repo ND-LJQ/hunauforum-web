@@ -29,9 +29,15 @@
 							</view>
 						</view>
 						
-						<view class="">
-							<uni-data-checkbox selectedColor="red" multiple v-model="checkbox5" :localdata="hobby2">
-											</uni-data-checkbox>
+						<view class="conditions">
+							<view class="conditions-1">
+								<image src="../../static/images/勾.svg" mode="heightFix"></image>
+								<text>8 to 20 strong characters</text>
+							</view>
+							<view class="conditions-2">
+								<image src="../../static/images/叉.svg" mode="heightFix"></image>
+								<text>Strong letters, numbers, and special characters</text>
+							</view>
 						</view>
 						
 
@@ -56,6 +62,14 @@
 		color: '#2979FF',
 		borderColor: '#2979FF'
 	}
+	
+	const conditions = [{
+		text:'8 to 20 strong characters',
+		value:1
+	},{
+		text:"Strong letters, numbers, and special characters",
+		value:2
+	}]
 		
 </script>
 
@@ -66,7 +80,7 @@
 		display: flex;
 		justify-content: center;
 		// align-items: center;
-		font-family: "Poppins","FZZhunYuan-M02S";
+		// font-family: "Poppins","FZZhunYuan-M02S";
 		height:calc(100vh - 44px) ;
 	}
 	
@@ -148,6 +162,32 @@
 		font-size: 24rpx;
 		line-height: 39rpx;
 		color: black;
+	}
+	
+	.conditions{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 20px;
+		/* identical to box height, or 167% */
+		/* Gray 1 */
+		color: #838383;
+		margin-top: 10px;
+		image{
+			height: 15px;
+			margin-right: 3px;
+		}
+		.conditions-1{
+			display: flex;
+			align-items: center;
+		}
+		.conditions-2{
+			margin-top: 10px;
+			display: flex;
+			// align-items: center;
+		}
 	}
 	
 	.changepwd-btn{

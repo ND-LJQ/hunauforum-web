@@ -31,7 +31,7 @@
 						
 						<view class="register-checkboxs">
 							<view>
-								<checkbox value="cb" checked="true" color="#42b883"  style="transform:scale(0.7)" />
+								<checkbox value="cb" checked="true" color="var(--border-color)"  style="transform:scale(0.7)" />
 								<text>我同意条款和条件</text>
 							</view>
 						</view>
@@ -52,23 +52,32 @@
 <script setup>
 	import {ref} from 'vue'
 	import { onLoad,onShow } from "@dcloudio/uni-app";
+	
 	const placeholderStyle = "border-color:#42b883"
 	const borderColor = "#42b883";
-	const styles = {
-		color: '#2979FF',
-		borderColor: '#2979FF'
-	}
+	
+	// console.log($forum-color-primary)
+	// const styles = {
+	// 	color: '#2979FF',
+	// 	borderColor: '#2979FF'
+	// }
 		
 </script>
 
 <style lang="scss" scoped>
+	
+	body{
+		--border-color:#{$forum-color-primary};
+		--text-white-color:#{$forum-text-color-white};
+		--text-white-color:#{$forum-text-color-white};
+	}
 	
 		
 	.register-body{
 		display: flex;
 		justify-content: center;
 		// align-items: center;
-		font-family: "Poppins","FZZhunYuan-M02S";
+		// font-family: "Poppins","FZZhunYuan-M02S";
 		height:calc(100vh - 44px) ;
 	}
 	
@@ -119,7 +128,7 @@
 			font-weight: 500;
 			font-size: 21rpx;
 			line-height: 39rpx;
-			color: #C5C5C5;
+			color: $forum-text-color-grey;
 		}
 	}
 	
@@ -130,7 +139,7 @@
 			font-weight: 500;
 			font-size: 21rpx;
 			line-height: 39rpx;
-			color: #C5C5C5;
+			color: $forum-text-color-grey;
 		}
 	}
 	
@@ -140,21 +149,21 @@
 		margin-top: 35rpx;
 		font-size: 24rpx;
 		line-height: 39rpx;
-		color: black;
+		color: $forum-text-color-active-light;
 	}
 	
 	.register-btn{
 		margin-top:56rpx ;
 		button{
-			color: #fff;
-			background-color:#42b883;
+			color: $forum-text-color-white;
+			background-color:$forum-color-primary;
 		}
 		button::after {
 			 border: none;
 		}		
 		.checkActive{
-			color:#fff;
-			background-color:#33a06f;
+			color:$forum-text-color-white;
+			background-color:$forum-color-primary-active;
 		}
 	}
 	

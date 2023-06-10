@@ -32,7 +32,7 @@
 		display: flex;
 		justify-content: center;
 		// align-items: center;
-		font-family: "Poppins","FZZhunYuan-M02S";
+		// font-family: "Poppins","FZZhunYuan-M02S";
 	}
 	
 	.container{

@@ -1,0 +1,19 @@
+{
+    "id": "vgt-tab",
+    "displayName": "tab切换滑动选项卡",
+    "version": "1.0.7",
+    "description": "tabs滑动切换组件、滑动动画、自动宽度、自定义默认、选中样式。",
+    "keywords": [
+        "tab",
+        "tabs",
+        "选项卡",
+        "滑动",
+        "自定义选项卡"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

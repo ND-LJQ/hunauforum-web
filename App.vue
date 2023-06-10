@@ -14,4 +14,10 @@
 
 <style>
 	/*每个页面公共css */
+	body{
+		font-family: "Poppins","FZZhunYuan-M02S";
+	}
+	
+
+	
 </style>
