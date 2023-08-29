@@ -60,9 +60,9 @@
 			</view>
 			
 			<view class="card-items-container">
-				<view class="card-item" v-for="(item,index) in articleTestList">
+				<view class="card-item"  v-for="(item,index) in articleTestList">
 					<uni-card :title="item.userName" :sub-title="`来自 📱${item.phoneName}`" extra="额外信息" :thumbnail="avatar"  @click="onClick">
-						<view class="card-body">
+						<view class="card-body" @click="articlehandler(item.articleId)">
 							<view class="">
 								<text class="uni-body">这是一个带封面和操作栏的卡片示例，此示例展示了封面插槽和操作栏插槽的用法。</text>
 							</view>
@@ -186,35 +186,40 @@
 				src:"../../static/bg1.jpg"
 			},{
 				src:"../../static/bg1.jpg"
-			}]
+			}],
+			articleId:"123"
 		},
 		{
 			userName:"小呆呆",
 			phoneName:"华为",
 			imgSrcs:[{
 				src:"../../static/bg1.jpg"
-			}]
+			}],
+			articleId:"123"
 		},
 		{
 			userName:"霸气哥哥",
 			phoneName:"iqoo10",
 			imgSrcs:[{
 				src:"../../static/bg1.jpg"
-			}]
+			}],
+			articleId:"123"
 		},
 		{
 			userName:"嘻嘻",
 			phoneName:"vivo",
 			imgSrcs:[{
 				src:"../../static/bg1.jpg"
-			}]
+			}],
+			articleId:"123"
 		},
 		{
 			userName:"小呆呆",
 			phoneName:"华为",
 			imgSrcs:[{
 				src:"../../static/bg1.jpg"
-			}]
+			}],
+			articleId:"123"
 		}
 	] 
 	const dataSource = [
@@ -346,7 +351,7 @@
 	}
 
 
-
+	//页面加载完毕获取手机状态栏高度并赋值
 	onShow(() => {
 		barHeight.value = uni.getSystemInfoSync().statusBarHeight;
 	})
@@ -358,6 +363,14 @@
 		scrollTop.value = e.detail.scrollTop;
 		// #endif
 	})
+	
+	//点击文章进行跳转
+	const articlehandler = (articleId) =>{
+		console.log(articleId);
+		uni.navigateTo({
+			url:`/pages/article/article?articleId=${articleId}`
+		})
+	}
 
 
 

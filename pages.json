@@ -100,6 +100,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/shopping/shopping",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -129,7 +138,7 @@
 				"iconPath": "./static/images/shopping.png",
 				"selectedIconPath": "./static/images/shopping-selected.png",
 				"text": "商城",
-				"pagePath": "pages/article/article"
+				"pagePath": "pages/shopping/shopping"
 			},
 			{
 				"iconPath": "./static/images/message.png",

@@ -44,12 +44,76 @@
 			<view class="article-content">
 				<ua-markdown :source="mdvalue" />
 			</view>
+			<view class="article-footer">
+				<uni-popup ref="popup" type="bottom">
+					<forumComment></forumComment>
+				</uni-popup>
+				
+				<!-- 评论按钮区 -->
+				<view class="footer-function-list">
+					<view class="left-function-list">
+						<uv-input placeholder="评论一下吧..." @click="commitOpen" border="surround" disabled></uv-input>
+						<!-- <button type="default" >评论</button> -->
+					</view>
+					<view class="right-function-list">
+						<view class="directory">
+							<uv-icon name="order" color="#2979ff" size="28"></uv-icon>
+						</view>
+						<view class="">
+							<uv-icon name="chat" color="#2979ff" size="28"></uv-icon>
+						</view>
+						<view class="">
+							<uv-icon name="thumb-up" color="#2979ff" size="28"></uv-icon>
+						</view>
+						<view class="">
+							<uv-icon name="star" color="#2979ff" size="28"></uv-icon>
+						</view>
+					</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script setup>
 import artileText from '../../common/article.js'
+import { ref,onMounted,getCurrentInstance } from 'vue'
+import forumComment from '../../components/forum-comment/forum-comment.vue'
+import {
+		onShow,
+		onLoad,
+		onReady,
+		onPageScroll
+	} from "@dcloudio/uni-app"
+
+const popup = ref(null);
+onLoad((options)=>{
+	console.log(options.articleId)
+})
+
+onMounted(() => {
+      // 这里我们需要确保 DOM 已经被渲染出来，然后再获取 DOM 元素
+     console.log(popup.value.show);
+});
+
+
+const showflag = ref(false);
+const that = getCurrentInstance();
+
+
+const commitOpen = () =>{
+	// console.log(popup.value);
+	// popup.value.open();
+	that.refs.popup.open()
+	// console.log();
+}
+
+const change = () =>{
+	
+}
+
+
+
 const mdvalue = `${artileText}`	
 </script>
 
@@ -123,6 +187,41 @@ const mdvalue = `${artileText}`
 	margin-top: 50rpx;
 }
 
+.article-footer{
+	position: sticky;
+	bottom: 0;
+	margin-top: 10px;
+	height: 50px;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	z-index: 999;
+}
+
+.footer-function-list,.left-function-list,.right-function-list{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.right-function-list{
+	width: 50%;
+}
+
+.left-function-list{
+	width: 40%;
+}
+
+.footer-function-list,.right-function-list{
+	justify-content: space-around;
+}
+
+.footer-function-list{
+	background-color: #fff;
+	// margin-top: 10px;
+}
+
 
 </style>
 <style>
@@ -139,4 +238,6 @@ const mdvalue = `${artileText}`
 		background-size: 20px 20px;
 		background-position: 50%;
 	}
+	
+
 </style>

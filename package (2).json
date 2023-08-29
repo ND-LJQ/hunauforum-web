@@ -1,0 +1,17 @@
+{
+    "id": "Telecloud-emoji",
+    "name": "输入框输入emoji表情",
+    "displayName": "输入框输入emoji表情",
+    "version": "0.1",
+    "description": "输入框输入emoji表情",
+    "keywords": [
+        "emoji",
+        "input"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

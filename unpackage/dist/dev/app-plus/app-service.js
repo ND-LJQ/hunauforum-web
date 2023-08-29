@@ -30,9 +30,10 @@ if (uni.restoreGlobal) {
   uni.restoreGlobal(Vue, weex, plus, setTimeout, clearTimeout, setInterval, clearInterval);
 }
 (function(vue, shared) {
-  var _c, _d, _e2, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r2, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F;
+  var _c, _d, _e2, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r2, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J;
   "use strict";
   const ON_SHOW = "onShow";
+  const ON_LOAD = "onLoad";
   const ON_PAGE_SCROLL = "onPageScroll";
   function formatAppLog(type, filename, ...args) {
     if (uni.__log__) {
@@ -48,6 +49,7 @@ if (uni.restoreGlobal) {
     !vue.isInSSRComponentSetup && vue.injectHook(lifecycle, hook, target);
   };
   const onShow = /* @__PURE__ */ createHook(ON_SHOW);
+  const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
   const onPageScroll = /* @__PURE__ */ createHook(ON_PAGE_SCROLL);
   const mpMixin = {};
   function email(value2) {
@@ -903,7 +905,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const props$d = {
+  const props$f = {
     props: {
       // 吸顶容器到顶部某个距离的时候，进行吸顶，在H5平台，NavigationBar为44px
       offsetTop: {
@@ -945,9 +947,9 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$u = {
+  const _sfc_main$A = {
     name: "uv-sticky",
-    mixins: [mpMixin, mixin, props$d],
+    mixins: [mpMixin, mixin, props$f],
     data() {
       return {
         cssSticky: false,
@@ -1073,7 +1075,7 @@ if (uni.restoreGlobal) {
       this.disconnectObserver("contentObserver");
     }
   };
-  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "uv-sticky",
       id: $data.elId,
@@ -1093,7 +1095,7 @@ if (uni.restoreGlobal) {
       )
     ], 12, ["id"]);
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$i], ["__scopeId", "data-v-0a817f53"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-sticky/components/uv-sticky/uv-sticky.vue"]]);
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$n], ["__scopeId", "data-v-0a817f53"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-sticky/components/uv-sticky/uv-sticky.vue"]]);
   const icons$1 = {
     "uvicon-level": "",
     "uvicon-column-line": "",
@@ -1308,7 +1310,7 @@ if (uni.restoreGlobal) {
     "uvicon-zh": "",
     "uvicon-en": ""
   };
-  const props$c = {
+  const props$e = {
     props: {
       // 图标类名
       name: {
@@ -1398,13 +1400,13 @@ if (uni.restoreGlobal) {
       ...(_f = (_e2 = uni.$uv) == null ? void 0 : _e2.props) == null ? void 0 : _f.icon
     }
   };
-  const _sfc_main$t = {
+  const _sfc_main$z = {
     name: "uv-icon",
     emits: ["click"],
     data() {
       return {};
     },
-    mixins: [mpMixin, mixin, props$c],
+    mixins: [mpMixin, mixin, props$e],
     computed: {
       uClasses() {
         let classes = [];
@@ -1449,7 +1451,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1493,8 +1495,8 @@ if (uni.restoreGlobal) {
       /* CLASS */
     );
   }
-  const __easycom_1$7 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$h], ["__scopeId", "data-v-b7a6dd5d"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-icon/components/uv-icon/uv-icon.vue"]]);
-  const props$b = {
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$m], ["__scopeId", "data-v-b7a6dd5d"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-icon/components/uv-icon/uv-icon.vue"]]);
+  const props$d = {
     props: {
       // 文字颜色
       color: {
@@ -1534,10 +1536,10 @@ if (uni.restoreGlobal) {
       ...(_h = (_g = uni.$uv) == null ? void 0 : _g.props) == null ? void 0 : _h.link
     }
   };
-  const _sfc_main$s = {
+  const _sfc_main$y = {
     name: "uv-link",
     emits: ["click"],
-    mixins: [mpMixin, mixin, props$b],
+    mixins: [mpMixin, mixin, props$d],
     computed: {
       linkStyle() {
         const style = {
@@ -1557,7 +1559,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -1570,7 +1572,7 @@ if (uni.restoreGlobal) {
       /* TEXT, STYLE */
     );
   }
-  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$g], ["__scopeId", "data-v-86e87617"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-link/components/uv-link/uv-link.vue"]]);
+  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$l], ["__scopeId", "data-v-86e87617"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-link/components/uv-link/uv-link.vue"]]);
   const value = {
     computed: {
       // 经处理后需要显示的值
@@ -1645,7 +1647,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const props$a = {
+  const props$c = {
     props: {
       // 主题颜色
       type: {
@@ -1758,10 +1760,10 @@ if (uni.restoreGlobal) {
       ...(_j = (_i = uni.$uv) == null ? void 0 : _i.props) == null ? void 0 : _j.text
     }
   };
-  const _sfc_main$r = {
+  const _sfc_main$x = {
     name: "uv-text",
     emits: ["click"],
-    mixins: [mpMixin, mixin, value, props$a],
+    mixins: [mpMixin, mixin, value, props$c],
     computed: {
       valueStyle() {
         const style = {
@@ -1799,8 +1801,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_1$7);
+  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_4$1);
     const _component_uv_link = resolveEasycom(vue.resolveDynamicComponent("uv-link"), __easycom_1$6);
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
@@ -1885,8 +1887,8 @@ if (uni.restoreGlobal) {
       /* STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$f], ["__scopeId", "data-v-8da47eb3"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-text/components/uv-text/uv-text.vue"]]);
-  const props$9 = {
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$k], ["__scopeId", "data-v-8da47eb3"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-text/components/uv-text/uv-text.vue"]]);
+  const props$b = {
     props: {
       // 头像图片路径(不能为相对路径)
       src: {
@@ -1966,10 +1968,10 @@ if (uni.restoreGlobal) {
     }
   };
   const base64Avatar = "data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMraHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjREMEQwRkY0RjgwNDExRUE5OTY2RDgxODY3NkJFODMxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjREMEQwRkY1RjgwNDExRUE5OTY2RDgxODY3NkJFODMxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NEQwRDBGRjJGODA0MTFFQTk5NjZEODE4Njc2QkU4MzEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NEQwRDBGRjNGODA0MTFFQTk5NjZEODE4Njc2QkU4MzEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAGBAQEBQQGBQUGCQYFBgkLCAYGCAsMCgoLCgoMEAwMDAwMDBAMDg8QDw4MExMUFBMTHBsbGxwfHx8fHx8fHx8fAQcHBw0MDRgQEBgaFREVGh8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx//wAARCADIAMgDAREAAhEBAxEB/8QAcQABAQEAAwEBAAAAAAAAAAAAAAUEAQMGAgcBAQAAAAAAAAAAAAAAAAAAAAAQAAIBAwICBgkDBQAAAAAAAAABAhEDBCEFMVFBYXGREiKBscHRMkJSEyOh4XLxYjNDFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A/fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHbHFyZ/Dam+yLA+Z2L0Pjtyj2poD4AAAAAAAAAAAAAAAAAAAAAAAAKWFs9y6lcvvwQeqj8z9wFaziY1n/HbUX9XF97A7QAGXI23EvJ1goyfzR0YEfN269jeZ+a03pNe0DIAAAAAAAAAAAAAAAAAAAACvtO3RcVkXlWutuL9YFYAAAAAOJRjKLjJVi9GmB5/csH/mu1h/in8PU+QGMAAAAAAAAAAAAAAAAAAaMDG/6MmMH8C80+xAelSSVFolwQAAAAAAAHVlWI37ErUulaPk+hgeYnCUJuElSUXRrrQHAAAAAAAAAAAAAAAAABa2Oz4bM7r4zdF2ICmAAAAAAAAAg7zZ8GX41wuJP0rRgYAAAAAAAAAAAAAAAAAD0m2R8ODaXU33tsDSAAAAAAAAAlb9HyWZcnJd9PcBHAAAAAAAAAAAAAAAAAPS7e64Vn+KA0AAAAAAAAAJm+v8Ftf3ewCKAAAAAAAAAAAAAAAAAX9muqeGo9NttP06+0DcAAAAAAAAAjb7dTu2ra+VOT9P8AQCWAAAAAAAAAAAAAAAAAUNmyPt5Ltv4bui/kuAF0AAAAAAADiUlGLlJ0SVW+oDzOXfd/Ind6JPRdS0QHSAAAAAAAAAAAAAAAAAE2nVaNcGB6Lbs6OTao9LsF51z60BrAAAAAABJ3jOVHjW3r/sa9QEgAAAAAAAAAAAAAAAAAAAPu1duWriuW34ZR4MC9hbnZyEoy8l36XwfYBsAAADaSq9EuLAlZ+7xSdrGdW9Hc5dgEdtt1erfFgAAAAAAAAAAAAAAAAADVjbblX6NR8MH80tEBRs7HYivyzlN8lovaBPzduvY0m6eK10TXtAyAarO55lpJK54orolr+4GqO/Xaea1FvqbXvA+Z77kNeW3GPbV+4DJfzcm/pcm3H6Vou5AdAFLC2ed2Pjv1txa8sV8T6wOL+yZEKu1JXFy4MDBOE4ScZxcZLinoB8gAAAAAAAAAAAB242LeyJ+C3GvN9C7QLmJtePYpKS+5c+p8F2IDYAANJqj1T4oCfk7Nj3G5Wn9qXJax7gJ93Z82D8sVNc4v30A6Xg5i42Z+iLfqARwcyT0sz9MWvWBps7LlTf5Grce9/oBTxdtxseklHxT+uWr9AGoAB138ezfj4bsFJdD6V2MCPm7RdtJzs1uW1xXzL3gTgAAAAAAAAADRhYc8q74I6RWs5ckB6GxYtWLat21SK731sDsAAAAAAAAAAAAAAAASt021NO/YjrxuQXT1oCOAAAAAAABzGLlJRSq26JAelwsWONYjbXxcZvmwO8AAAAAAAAAAAAAAAAAAef3TEWPkVivx3NY9T6UBiAAAAAABo2+VmGXblddIJ8eivRUD0oAAAAAAAAAAAAAAAAAAAYt4tKeFKVNYNSXfRgefAAAAAAAAr7VuSSWPedKaW5v1MCsAAAAAAAAAAAAAAAAAAIe6bj96Ts2n+JPzSXzP3ATgAAAAAAAAFbbt1UUrOQ9FpC4/UwK6aaqtU+DAAAAAAAAAAAAAAA4lKMIuUmoxWrb4ARNx3R3q2rLpa4Sl0y/YCcAAAAAAAAAAANmFud7G8r89r6X0dgFvGzLGRGtuWvTF6NAdwAAAAAAAAAAAy5W442PVN+K59EePp5ARMvOv5MvO6QXCC4AZwAAAAAAAAAAAAAcxlKLUotprg1owN+PvORborq+7Hnwl3gUbO74VzRydt8pKn68ANcJwmqwkpLmnUDkAAAAfNy9atqtyagut0AxXt5xIV8Fbj6lRd7Am5G65V6qUvtwfyx94GMAAAAAAAAAAAAAAAAAAAOU2nVOj5gdsc3LiqRvTpyqwOxbnnrhdfpSfrQB7pnv/AGvuS9gHXPMy5/Fem1yq0v0A6W29XqwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf//Z";
-  const _sfc_main$q = {
+  const _sfc_main$w = {
     name: "uv-avatar",
     emits: ["click"],
-    mixins: [mpMixin, mixin, props$9],
+    mixins: [mpMixin, mixin, props$b],
     data() {
       return {
         // 如果配置randomBgColor参数为true，在图标或者文字的模式下，会随机从中取出一个颜色值当做背景色
@@ -2037,8 +2039,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_1$7);
+  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_4$1);
     const _component_uv_text = resolveEasycom(vue.resolveDynamicComponent("uv-text"), __easycom_1$5);
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -2088,8 +2090,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$e], ["__scopeId", "data-v-fa9b0ca7"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-avatar/components/uv-avatar/uv-avatar.vue"]]);
-  const props$8 = {
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$j], ["__scopeId", "data-v-fa9b0ca7"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-avatar/components/uv-avatar/uv-avatar.vue"]]);
+  const props$a = {
     props: {
       // 搜索框形状，round-圆形，square-方形
       shape: {
@@ -2208,10 +2210,10 @@ if (uni.restoreGlobal) {
       ...(_n = (_m = uni.$uv) == null ? void 0 : _m.props) == null ? void 0 : _n.search
     }
   };
-  const _sfc_main$p = {
+  const _sfc_main$v = {
     name: "uv-search",
     emits: ["click", "input", "change", "clear", "search", "custom", "focus", "blur", "clickIcon", "update:modelValue"],
-    mixins: [mpMixin, mixin, props$8],
+    mixins: [mpMixin, mixin, props$a],
     data() {
       return {
         keyword: "",
@@ -2301,8 +2303,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_1$7);
+  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2395,7 +2397,7 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$d], ["__scopeId", "data-v-46cbdd03"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-search/components/uv-search/uv-search.vue"]]);
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$i], ["__scopeId", "data-v-46cbdd03"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-search/components/uv-search/uv-search.vue"]]);
   const icons = {
     "id": "2852637",
     "name": "uniui图标库",
@@ -3571,7 +3573,7 @@ if (uni.restoreGlobal) {
     const reg = /^[0-9]*$/g;
     return typeof val === "number" || reg.test(val) ? val + "px" : val;
   };
-  const _sfc_main$o = {
+  const _sfc_main$u = {
     name: "UniIcons",
     emits: ["click"],
     props: {
@@ -3615,7 +3617,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -3628,7 +3630,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$c], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$h], ["__scopeId", "data-v-d31e1c47"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
   const uvBadgeProps = {
     props: {
       // 是否显示圆点
@@ -3702,7 +3704,7 @@ if (uni.restoreGlobal) {
       ...(_p = (_o = uni.$uv) == null ? void 0 : _o.props) == null ? void 0 : _p.badge
     }
   };
-  const _sfc_main$n = {
+  const _sfc_main$t = {
     name: "uv-badge",
     mixins: [mpMixin, mixin, uvBadgeProps],
     computed: {
@@ -3745,7 +3747,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show && ((Number(_ctx.value) === 0 ? _ctx.showZero : true) || _ctx.isDot) ? (vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -3758,8 +3760,8 @@ if (uni.restoreGlobal) {
       /* TEXT, CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$b], ["__scopeId", "data-v-91e4945b"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-badge/components/uv-badge/uv-badge.vue"]]);
-  const props$7 = {
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$g], ["__scopeId", "data-v-91e4945b"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-badge/components/uv-badge/uv-badge.vue"]]);
+  const props$9 = {
     props: {
       // 滑块的移动过渡时间，单位ms
       duration: {
@@ -3830,10 +3832,10 @@ if (uni.restoreGlobal) {
       ...(_r2 = (_q = uni.$uv) == null ? void 0 : _q.props) == null ? void 0 : _r2.tabs
     }
   };
-  const _sfc_main$m = {
+  const _sfc_main$s = {
     name: "uv-tabs",
     emits: ["click", "change"],
-    mixins: [mpMixin, mixin, props$7],
+    mixins: [mpMixin, mixin, props$9],
     data() {
       return {
         firstTime: true,
@@ -3976,8 +3978,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uv_badge = resolveEasycom(vue.resolveDynamicComponent("uv-badge"), __easycom_0$4);
+  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uv_badge = resolveEasycom(vue.resolveDynamicComponent("uv-badge"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "uv-tabs" }, [
       vue.createElementVNode("view", { class: "uv-tabs__wrapper" }, [
         vue.renderSlot(_ctx.$slots, "left", {}, void 0, true),
@@ -4069,7 +4071,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$a], ["__scopeId", "data-v-fd5fcf14"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-tabs/components/uv-tabs/uv-tabs.vue"]]);
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$f], ["__scopeId", "data-v-fd5fcf14"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-tabs/components/uv-tabs/uv-tabs.vue"]]);
   function colorGradient(startColor = "rgb(0, 0, 0)", endColor = "rgb(255, 255, 255)", step = 10) {
     const startRGB = hexToRgb(startColor, false);
     const startR = startRGB[0];
@@ -4154,7 +4156,7 @@ if (uni.restoreGlobal) {
       return _this;
     }
   }
-  const props$6 = {
+  const props$8 = {
     props: {
       // 是否显示组件
       show: {
@@ -4214,9 +4216,9 @@ if (uni.restoreGlobal) {
       ...(_t = (_s = uni.$uv) == null ? void 0 : _s.props) == null ? void 0 : _t.loadingIcon
     }
   };
-  const _sfc_main$l = {
+  const _sfc_main$r = {
     name: "uv-loading-icon",
-    mixins: [mpMixin, mixin, props$6],
+    mixins: [mpMixin, mixin, props$8],
     data() {
       return {
         // Array.form可以通过一个伪数组对象创建指定长度的数组
@@ -4274,7 +4276,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.show ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4337,8 +4339,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$9], ["__scopeId", "data-v-29b619ea"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-loading-icon/components/uv-loading-icon/uv-loading-icon.vue"]]);
-  const props$5 = {
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$e], ["__scopeId", "data-v-29b619ea"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-loading-icon/components/uv-loading-icon/uv-loading-icon.vue"]]);
+  const props$7 = {
     props: {
       // 轮播的长度
       length: {
@@ -4368,9 +4370,9 @@ if (uni.restoreGlobal) {
       ...(_v = (_u = uni.$uv) == null ? void 0 : _u.props) == null ? void 0 : _v.swiperIndicator
     }
   };
-  const _sfc_main$k = {
+  const _sfc_main$q = {
     name: "uv-swiper-indicator",
-    mixins: [mpMixin, mixin, props$5],
+    mixins: [mpMixin, mixin, props$7],
     data() {
       return {
         lineWidth: 22
@@ -4395,7 +4397,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "uv-swiper-indicator" }, [
       _ctx.indicatorMode === "line" ? (vue.openBlock(), vue.createElementBlock(
         "view",
@@ -4448,8 +4450,8 @@ if (uni.restoreGlobal) {
       ])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$8], ["__scopeId", "data-v-09034092"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-swiper/components/uv-swiper-indicator/uv-swiper-indicator.vue"]]);
-  const props$4 = {
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$d], ["__scopeId", "data-v-09034092"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-swiper/components/uv-swiper-indicator/uv-swiper-indicator.vue"]]);
+  const props$6 = {
     props: {
       // 列表数组，元素可为字符串，如为对象可通过keyName指定目标属性名
       list: {
@@ -4575,9 +4577,9 @@ if (uni.restoreGlobal) {
       ...(_x = (_w = uni.$uv) == null ? void 0 : _w.props) == null ? void 0 : _x.swiper
     }
   };
-  const _sfc_main$j = {
+  const _sfc_main$p = {
     name: "uv-swiper",
-    mixins: [mpMixin, mixin, props$4],
+    mixins: [mpMixin, mixin, props$6],
     emits: ["click", "change"],
     data() {
       return {
@@ -4655,8 +4657,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uv_loading_icon = resolveEasycom(vue.resolveDynamicComponent("uv-loading-icon"), __easycom_0$3);
+  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uv_loading_icon = resolveEasycom(vue.resolveDynamicComponent("uv-loading-icon"), __easycom_0$5);
     const _component_uv_swiper_indicator = resolveEasycom(vue.resolveDynamicComponent("uv-swiper-indicator"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -4781,8 +4783,8 @@ if (uni.restoreGlobal) {
       /* STYLE */
     );
   }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$7], ["__scopeId", "data-v-7522af0b"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-swiper/components/uv-swiper/uv-swiper.vue"]]);
-  const _sfc_main$i = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$c], ["__scopeId", "data-v-7522af0b"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-swiper/components/uv-swiper/uv-swiper.vue"]]);
+  const _sfc_main$o = /* @__PURE__ */ vue.defineComponent({
     __name: "mxio-scroll-x",
     props: {
       barWidth: { type: Number, required: false, default: 80 },
@@ -4919,8 +4921,8 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["__scopeId", "data-v-7aa1eedb"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/mxio-scroll-x/components/mxio-scroll-x/mxio-scroll-x.vue"]]);
-  const _sfc_main$h = {
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["__scopeId", "data-v-7aa1eedb"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/mxio-scroll-x/components/mxio-scroll-x/mxio-scroll-x.vue"]]);
+  const _sfc_main$n = {
     name: "UniCard",
     emits: ["click"],
     props: {
@@ -4981,7 +4983,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -5082,8 +5084,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_7 = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$6], ["__scopeId", "data-v-ae4bee67"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uni-card/components/uni-card/uni-card.vue"]]);
-  const props$3 = {
+  const __easycom_7 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$b], ["__scopeId", "data-v-ae4bee67"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uni-card/components/uni-card/uni-card.vue"]]);
+  const props$5 = {
     props: {
       // 是否展示组件
       show: {
@@ -5162,7 +5164,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  const _sfc_main$g = {
+  const _sfc_main$m = {
     name: "uv-transition",
     data() {
       return {
@@ -5193,7 +5195,7 @@ if (uni.restoreGlobal) {
         };
       }
     },
-    mixins: [mpMixin, mixin, transition, props$3],
+    mixins: [mpMixin, mixin, transition, props$5],
     watch: {
       show: {
         handler(newVal) {
@@ -5204,7 +5206,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return $data.inited ? (vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -5222,8 +5224,8 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE, HYDRATE_EVENTS */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$5], ["__scopeId", "data-v-fe34503b"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-transition/components/uv-transition/uv-transition.vue"]]);
-  const props$2 = {
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$a], ["__scopeId", "data-v-fe34503b"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-transition/components/uv-transition/uv-transition.vue"]]);
+  const props$4 = {
     props: {
       // 返回顶部的形状，circle-圆形，square-方形
       mode: {
@@ -5281,10 +5283,10 @@ if (uni.restoreGlobal) {
       ...(_B = (_A = uni.$uv) == null ? void 0 : _A.props) == null ? void 0 : _B.backtop
     }
   };
-  const _sfc_main$f = {
+  const _sfc_main$l = {
     name: "uv-back-top",
     emits: ["click"],
-    mixins: [mpMixin, mixin, props$2],
+    mixins: [mpMixin, mixin, props$4],
     computed: {
       backTopStyle() {
         const style = {
@@ -5325,8 +5327,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_1$7);
+  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_4$1);
     const _component_uv_transition = resolveEasycom(vue.resolveDynamicComponent("uv-transition"), __easycom_1$1);
     return vue.openBlock(), vue.createBlock(_component_uv_transition, {
       mode: "fade",
@@ -5366,8 +5368,8 @@ if (uni.restoreGlobal) {
       /* FORWARDED */
     }, 8, ["customStyle", "show"]);
   }
-  const __easycom_8 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$4], ["__scopeId", "data-v-cb0af4f1"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-back-top/components/uv-back-top/uv-back-top.vue"]]);
-  const _sfc_main$e = {
+  const __easycom_8 = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$9], ["__scopeId", "data-v-cb0af4f1"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-back-top/components/uv-back-top/uv-back-top.vue"]]);
+  const _sfc_main$k = {
     __name: "index",
     setup(__props) {
       const avatar = "https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png";
@@ -5438,35 +5440,40 @@ if (uni.restoreGlobal) {
             src: "../../static/bg1.jpg"
           }, {
             src: "../../static/bg1.jpg"
-          }]
+          }],
+          articleId: "123"
         },
         {
           userName: "小呆呆",
           phoneName: "华为",
           imgSrcs: [{
             src: "../../static/bg1.jpg"
-          }]
+          }],
+          articleId: "123"
         },
         {
           userName: "霸气哥哥",
           phoneName: "iqoo10",
           imgSrcs: [{
             src: "../../static/bg1.jpg"
-          }]
+          }],
+          articleId: "123"
         },
         {
           userName: "嘻嘻",
           phoneName: "vivo",
           imgSrcs: [{
             src: "../../static/bg1.jpg"
-          }]
+          }],
+          articleId: "123"
         },
         {
           userName: "小呆呆",
           phoneName: "华为",
           imgSrcs: [{
             src: "../../static/bg1.jpg"
-          }]
+          }],
+          articleId: "123"
         }
       ];
       const dataSource = [
@@ -5626,13 +5633,13 @@ if (uni.restoreGlobal) {
         }
       ];
       const click = (item) => {
-        formatAppLog("log", "at pages/index/index.vue:337", "item", item);
+        formatAppLog("log", "at pages/index/index.vue:342", "item", item);
       };
       const onClick = () => {
-        formatAppLog("log", "at pages/index/index.vue:341", "被点击");
+        formatAppLog("log", "at pages/index/index.vue:346", "被点击");
       };
       const scrollItemEmitsClick = (item, index2, array2) => {
-        formatAppLog("log", "at pages/index/index.vue:345", item);
+        formatAppLog("log", "at pages/index/index.vue:350", item);
       };
       onShow(() => {
         barHeight.value = uni.getSystemInfoSync().statusBarHeight;
@@ -5640,11 +5647,17 @@ if (uni.restoreGlobal) {
       onPageScroll((e2) => {
         scrollTop.value = e2.scrollTop;
       });
+      const articlehandler = (articleId) => {
+        formatAppLog("log", "at pages/index/index.vue:369", articleId);
+        uni.navigateTo({
+          url: `/pages/article/article?articleId=${articleId}`
+        });
+      };
       return (_ctx, _cache) => {
-        const _component_uv_sticky = resolveEasycom(vue.resolveDynamicComponent("uv-sticky"), __easycom_2);
+        const _component_uv_sticky = resolveEasycom(vue.resolveDynamicComponent("uv-sticky"), __easycom_2$1);
         const _component_uv_avatar = resolveEasycom(vue.resolveDynamicComponent("uv-avatar"), __easycom_1$4);
         const _component_uv_search = resolveEasycom(vue.resolveDynamicComponent("uv-search"), __easycom_1$3);
-        const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$5);
+        const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$7);
         const _component_uv_tabs = resolveEasycom(vue.resolveDynamicComponent("uv-tabs"), __easycom_4);
         const _component_uv_swiper = resolveEasycom(vue.resolveDynamicComponent("uv-swiper"), __easycom_5);
         const _component_mxio_scroll_x = resolveEasycom(vue.resolveDynamicComponent("mxio-scroll-x"), __easycom_6);
@@ -5758,7 +5771,10 @@ if (uni.restoreGlobal) {
                       onClick
                     }, {
                       default: vue.withCtx(() => [
-                        vue.createElementVNode("view", { class: "card-body" }, [
+                        vue.createElementVNode("view", {
+                          class: "card-body",
+                          onClick: ($event) => articlehandler(item.articleId)
+                        }, [
                           vue.createElementVNode("view", { class: "" }, [
                             vue.createElementVNode("text", { class: "uni-body" }, "这是一个带封面和操作栏的卡片示例，此示例展示了封面插槽和操作栏插槽的用法。")
                           ]),
@@ -5816,7 +5832,7 @@ if (uni.restoreGlobal) {
                               vue.createElementVNode("text", { class: "card-actions-item-text" }, "转发")
                             ])
                           ])
-                        ])
+                        ], 8, ["onClick"])
                       ]),
                       _: 2
                       /* DYNAMIC */
@@ -5833,7 +5849,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["__scopeId", "data-v-1cf27b2a"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/index/index.vue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["__scopeId", "data-v-1cf27b2a"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/index/index.vue"]]);
   function obj2strClass(obj) {
     let classess = "";
     for (let key in obj) {
@@ -5852,7 +5868,7 @@ if (uni.restoreGlobal) {
     }
     return style;
   }
-  const _sfc_main$d = {
+  const _sfc_main$j = {
     name: "uni-easyinput",
     emits: ["click", "iconClick", "update:modelValue", "input", "focus", "blur", "confirm", "clear", "eyes", "change", "keyboardheightchange"],
     model: {
@@ -6185,8 +6201,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$5);
+  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -6306,13 +6322,13 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$3], ["__scopeId", "data-v-09fd5285"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue"]]);
-  const _sfc_main$c = {
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$8], ["__scopeId", "data-v-09fd5285"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue"]]);
+  const _sfc_main$i = {
     __name: "login",
     setup(__props) {
       const borderColor = "#42b883";
       return (_ctx, _cache) => {
-        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$2);
+        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$4);
         return vue.openBlock(), vue.createElementBlock("view", { class: "login-body" }, [
           vue.createElementVNode("view", { class: "container" }, [
             vue.createElementVNode("view", { class: "login-title" }, [
@@ -6400,13 +6416,13 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-e4e4508d"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/login/login.vue"]]);
-  const _sfc_main$b = {
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["__scopeId", "data-v-e4e4508d"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/login/login.vue"]]);
+  const _sfc_main$h = {
     __name: "changepassword",
     setup(__props) {
       const borderColor = "#42b883";
       return (_ctx, _cache) => {
-        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$2);
+        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$4);
         return vue.openBlock(), vue.createElementBlock("view", { class: "changepwd-body" }, [
           vue.createElementVNode("view", { class: "container" }, [
             vue.createElementVNode("view", { class: "changepwd-box" }, [
@@ -6482,13 +6498,13 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesChangepasswordChangepassword = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-6f27b6e7"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/changepassword/changepassword.vue"]]);
-  const _sfc_main$a = {
+  const PagesChangepasswordChangepassword = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["__scopeId", "data-v-6f27b6e7"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/changepassword/changepassword.vue"]]);
+  const _sfc_main$g = {
     __name: "changepasswdbyphone",
     setup(__props) {
       const borderColor = "#42b883";
       return (_ctx, _cache) => {
-        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$2);
+        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$4);
         return vue.openBlock(), vue.createElementBlock("view", { class: "changepwd-body" }, [
           vue.createElementVNode("view", { class: "container" }, [
             vue.createElementVNode("view", { class: "changepwd-title" }, [
@@ -6521,13 +6537,13 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesChangepasswordChangepasswdbyphone = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-e0d80887"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/changepassword/changepasswdbyphone.vue"]]);
-  const _sfc_main$9 = {
+  const PagesChangepasswordChangepasswdbyphone = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["__scopeId", "data-v-e0d80887"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/changepassword/changepasswdbyphone.vue"]]);
+  const _sfc_main$f = {
     __name: "changepwdemail",
     setup(__props) {
       const borderColor = "#42b883";
       return (_ctx, _cache) => {
-        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$2);
+        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$4);
         return vue.openBlock(), vue.createElementBlock("view", { class: "changepwd-body" }, [
           vue.createElementVNode("view", { class: "container" }, [
             vue.createElementVNode("view", { class: "changepwd-title" }, [
@@ -6560,8 +6576,8 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesChangepasswordChangepwdemail = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-028ebf2f"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/changepassword/changepwdemail.vue"]]);
-  const props$1 = {
+  const PagesChangepasswordChangepwdemail = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["__scopeId", "data-v-028ebf2f"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/changepassword/changepwdemail.vue"]]);
+  const props$3 = {
     props: {
       // 键盘弹起时，是否自动上推页面
       adjustPosition: {
@@ -6641,9 +6657,9 @@ if (uni.restoreGlobal) {
       ...(_D = (_C = uni.$uv) == null ? void 0 : _C.props) == null ? void 0 : _D.codeInput
     }
   };
-  const _sfc_main$8 = {
+  const _sfc_main$e = {
     name: "uv-code-input",
-    mixins: [mpMixin, mixin, props$1],
+    mixins: [mpMixin, mixin, props$3],
     data() {
       return {
         inputValue: "",
@@ -6726,7 +6742,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "uv-code-input" }, [
       (vue.openBlock(true), vue.createElementBlock(
         vue.Fragment,
@@ -6793,12 +6809,12 @@ if (uni.restoreGlobal) {
       }, null, 44, ["disabled", "focus", "value", "maxlength", "adjustPosition"])
     ]);
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$2], ["__scopeId", "data-v-bdd8c54a"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-code-input/components/uv-code-input/uv-code-input.vue"]]);
-  const _sfc_main$7 = {
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$7], ["__scopeId", "data-v-bdd8c54a"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-code-input/components/uv-code-input/uv-code-input.vue"]]);
+  const _sfc_main$d = {
     __name: "sendcode",
     setup(__props) {
       return (_ctx, _cache) => {
-        const _component_uv_code_input = resolveEasycom(vue.resolveDynamicComponent("uv-code-input"), __easycom_0$1);
+        const _component_uv_code_input = resolveEasycom(vue.resolveDynamicComponent("uv-code-input"), __easycom_0$3);
         return vue.openBlock(), vue.createElementBlock("view", { class: "sendcode-body" }, [
           vue.createElementVNode("view", { class: "container" }, [
             vue.createElementVNode("view", { class: "sendcode-title" }, [
@@ -6823,13 +6839,13 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesChangepasswordSendcode = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-d613efc9"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/changepassword/sendcode.vue"]]);
-  const _sfc_main$6 = {
+  const PagesChangepasswordSendcode = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["__scopeId", "data-v-d613efc9"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/changepassword/sendcode.vue"]]);
+  const _sfc_main$c = {
     __name: "register",
     setup(__props) {
       const borderColor = "#42b883";
       return (_ctx, _cache) => {
-        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$2);
+        const _component_uni_easyinput = resolveEasycom(vue.resolveDynamicComponent("uni-easyinput"), __easycom_0$4);
         return vue.openBlock(), vue.createElementBlock("view", { class: "register-body" }, [
           vue.createElementVNode("view", { class: "container" }, [
             vue.createElementVNode("view", { class: "register-box" }, [
@@ -6903,9 +6919,9 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesRegisterRegister = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-bac4a35d"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/register/register.vue"]]);
-  const _sfc_main$5 = {};
-  function _sfc_render$1(_ctx, _cache) {
+  const PagesRegisterRegister = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-bac4a35d"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/register/register.vue"]]);
+  const _sfc_main$b = {};
+  function _sfc_render$6(_ctx, _cache) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "updated-body" }, [
       vue.createElementVNode("view", { class: "updated-container" }, [
         vue.createElementVNode("view", { class: "update-box" }, [
@@ -6930,8 +6946,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesPasswdupdatedPasswdupdated = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$1], ["__scopeId", "data-v-bb8da604"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/passwdupdated/passwdupdated.vue"]]);
-  const _sfc_main$4 = {
+  const PagesPasswdupdatedPasswdupdated = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$6], ["__scopeId", "data-v-bb8da604"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/passwdupdated/passwdupdated.vue"]]);
+  const _sfc_main$a = {
     __name: "search",
     setup(__props) {
       const barHeight = vue.ref(0);
@@ -6939,9 +6955,9 @@ if (uni.restoreGlobal) {
         barHeight.value = uni.getSystemInfoSync().statusBarHeight;
       });
       return (_ctx, _cache) => {
-        const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$5);
+        const _component_uni_icons = resolveEasycom(vue.resolveDynamicComponent("uni-icons"), __easycom_0$7);
         const _component_uv_search = resolveEasycom(vue.resolveDynamicComponent("uv-search"), __easycom_1$3);
-        const _component_uv_sticky = resolveEasycom(vue.resolveDynamicComponent("uv-sticky"), __easycom_2);
+        const _component_uv_sticky = resolveEasycom(vue.resolveDynamicComponent("uv-sticky"), __easycom_2$1);
         return vue.openBlock(), vue.createElementBlock("view", { class: "search-body" }, [
           vue.createVNode(_component_uv_sticky, null, {
             default: vue.withCtx(() => [
@@ -6974,7 +6990,7 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const PagesSearchSearch = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-c10c040c"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/search/search.vue"]]);
+  const PagesSearchSearch = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-c10c040c"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/search/search.vue"]]);
   let flag;
   function throttle(func2, wait = 500, immediate = true) {
     if (immediate) {
@@ -6993,7 +7009,7 @@ if (uni.restoreGlobal) {
       }, wait);
     }
   }
-  const props = {
+  const props$2 = {
     props: {
       // 是否细边框
       hairline: {
@@ -7146,9 +7162,9 @@ if (uni.restoreGlobal) {
       ...(_F = (_E = uni.$uv) == null ? void 0 : _E.props) == null ? void 0 : _F.button
     }
   };
-  const _sfc_main$3 = {
+  const _sfc_main$9 = {
     name: "uv-button",
-    mixins: [mpMixin, mixin, props],
+    mixins: [mpMixin, mixin, props$2],
     emits: ["click", "getphonenumber", "getuserinfo", "error", "opensetting", "launchapp"],
     data() {
       return {};
@@ -7263,9 +7279,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uv_loading_icon = resolveEasycom(vue.resolveDynamicComponent("uv-loading-icon"), __easycom_0$3);
-    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_1$7);
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uv_loading_icon = resolveEasycom(vue.resolveDynamicComponent("uv-loading-icon"), __easycom_0$5);
+    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("button", {
       "hover-start-time": Number(_ctx.hoverStartTime),
       "hover-stay-time": Number(_ctx.hoverStayTime),
@@ -7341,7 +7357,7 @@ if (uni.restoreGlobal) {
       ))
     ], 46, ["hover-start-time", "hover-stay-time", "form-type", "open-type", "app-parameter", "hover-stop-propagation", "send-message-title", "send-message-path", "lang", "data-name", "session-from", "send-message-img", "show-message-card", "hover-class"]);
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render], ["__scopeId", "data-v-ae8e42c7"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-button/components/uv-button/uv-button.vue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$5], ["__scopeId", "data-v-ae8e42c7"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-button/components/uv-button/uv-button.vue"]]);
   function e$1(e2) {
     if (e2.__esModule)
       return e2;
@@ -16353,7 +16369,7 @@ if (uni.restoreGlobal) {
     }
     return obj;
   }
-  const _sfc_main$2 = {
+  const _sfc_main$8 = {
     __name: "ua-markdown",
     props: {
       // 解析内容
@@ -16443,7 +16459,1168 @@ if (uni.restoreGlobal) {
       };
     }
   };
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-64f4d077"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/components/ua-markdown/ua-markdown.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__scopeId", "data-v-64f4d077"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/components/ua-markdown/ua-markdown.vue"]]);
+  class MPAnimation {
+    constructor(options, _this) {
+      this.options = options;
+      this.animation = uni.createAnimation({
+        ...options
+      });
+      this.currentStepAnimates = {};
+      this.next = 0;
+      this.$ = _this;
+    }
+    _nvuePushAnimates(type, args) {
+      let aniObj = this.currentStepAnimates[this.next];
+      let styles = {};
+      if (!aniObj) {
+        styles = {
+          styles: {},
+          config: {}
+        };
+      } else {
+        styles = aniObj;
+      }
+      if (animateTypes1.includes(type)) {
+        if (!styles.styles.transform) {
+          styles.styles.transform = "";
+        }
+        let unit = "";
+        if (type === "rotate") {
+          unit = "deg";
+        }
+        styles.styles.transform += `${type}(${args + unit}) `;
+      } else {
+        styles.styles[type] = `${args}`;
+      }
+      this.currentStepAnimates[this.next] = styles;
+    }
+    _animateRun(styles = {}, config = {}) {
+      let ref = this.$.$refs["ani"].ref;
+      if (!ref)
+        return;
+      return new Promise((resolve, reject) => {
+        nvueAnimation.transition(ref, {
+          styles,
+          ...config
+        }, (res) => {
+          resolve();
+        });
+      });
+    }
+    _nvueNextAnimate(animates, step = 0, fn) {
+      let obj = animates[step];
+      if (obj) {
+        let {
+          styles,
+          config
+        } = obj;
+        this._animateRun(styles, config).then(() => {
+          step += 1;
+          this._nvueNextAnimate(animates, step, fn);
+        });
+      } else {
+        this.currentStepAnimates = {};
+        typeof fn === "function" && fn();
+        this.isEnd = true;
+      }
+    }
+    step(config = {}) {
+      this.animation.step(config);
+      return this;
+    }
+    run(fn) {
+      this.$.animationData = this.animation.export();
+      this.$.timer = setTimeout(() => {
+        typeof fn === "function" && fn();
+      }, this.$.durationTime);
+    }
+  }
+  const animateTypes1 = [
+    "matrix",
+    "matrix3d",
+    "rotate",
+    "rotate3d",
+    "rotateX",
+    "rotateY",
+    "rotateZ",
+    "scale",
+    "scale3d",
+    "scaleX",
+    "scaleY",
+    "scaleZ",
+    "skew",
+    "skewX",
+    "skewY",
+    "translate",
+    "translate3d",
+    "translateX",
+    "translateY",
+    "translateZ"
+  ];
+  const animateTypes2 = ["opacity", "backgroundColor"];
+  const animateTypes3 = ["width", "height", "left", "right", "top", "bottom"];
+  animateTypes1.concat(animateTypes2, animateTypes3).forEach((type) => {
+    MPAnimation.prototype[type] = function(...args) {
+      this.animation[type](...args);
+      return this;
+    };
+  });
+  function createAnimation(option, _this) {
+    if (!_this)
+      return;
+    clearTimeout(_this.timer);
+    return new MPAnimation(option, _this);
+  }
+  const _sfc_main$7 = {
+    name: "uniTransition",
+    emits: ["click", "change"],
+    props: {
+      show: {
+        type: Boolean,
+        default: false
+      },
+      modeClass: {
+        type: [Array, String],
+        default() {
+          return "fade";
+        }
+      },
+      duration: {
+        type: Number,
+        default: 300
+      },
+      styles: {
+        type: Object,
+        default() {
+          return {};
+        }
+      },
+      customClass: {
+        type: String,
+        default: ""
+      },
+      onceRender: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data() {
+      return {
+        isShow: false,
+        transform: "",
+        opacity: 1,
+        animationData: {},
+        durationTime: 300,
+        config: {}
+      };
+    },
+    watch: {
+      show: {
+        handler(newVal) {
+          if (newVal) {
+            this.open();
+          } else {
+            if (this.isShow) {
+              this.close();
+            }
+          }
+        },
+        immediate: true
+      }
+    },
+    computed: {
+      // 生成样式数据
+      stylesObject() {
+        let styles = {
+          ...this.styles,
+          "transition-duration": this.duration / 1e3 + "s"
+        };
+        let transform = "";
+        for (let i2 in styles) {
+          let line = this.toLine(i2);
+          transform += line + ":" + styles[i2] + ";";
+        }
+        return transform;
+      },
+      // 初始化动画条件
+      transformStyles() {
+        return "transform:" + this.transform + ";opacity:" + this.opacity + ";" + this.stylesObject;
+      }
+    },
+    created() {
+      this.config = {
+        duration: this.duration,
+        timingFunction: "ease",
+        transformOrigin: "50% 50%",
+        delay: 0
+      };
+      this.durationTime = this.duration;
+    },
+    methods: {
+      /**
+       *  ref 触发 初始化动画
+       */
+      init(obj = {}) {
+        if (obj.duration) {
+          this.durationTime = obj.duration;
+        }
+        this.animation = createAnimation(Object.assign(this.config, obj), this);
+      },
+      /**
+       * 点击组件触发回调
+       */
+      onClick() {
+        this.$emit("click", {
+          detail: this.isShow
+        });
+      },
+      /**
+       * ref 触发 动画分组
+       * @param {Object} obj
+       */
+      step(obj, config = {}) {
+        if (!this.animation)
+          return;
+        for (let i2 in obj) {
+          try {
+            if (typeof obj[i2] === "object") {
+              this.animation[i2](...obj[i2]);
+            } else {
+              this.animation[i2](obj[i2]);
+            }
+          } catch (e2) {
+            formatAppLog("error", "at uni_modules/uni-transition/components/uni-transition/uni-transition.vue:148", `方法 ${i2} 不存在`);
+          }
+        }
+        this.animation.step(config);
+        return this;
+      },
+      /**
+       *  ref 触发 执行动画
+       */
+      run(fn) {
+        if (!this.animation)
+          return;
+        this.animation.run(fn);
+      },
+      // 开始过度动画
+      open() {
+        clearTimeout(this.timer);
+        this.transform = "";
+        this.isShow = true;
+        let { opacity, transform } = this.styleInit(false);
+        if (typeof opacity !== "undefined") {
+          this.opacity = opacity;
+        }
+        this.transform = transform;
+        this.$nextTick(() => {
+          this.timer = setTimeout(() => {
+            this.animation = createAnimation(this.config, this);
+            this.tranfromInit(false).step();
+            this.animation.run();
+            this.$emit("change", {
+              detail: this.isShow
+            });
+          }, 20);
+        });
+      },
+      // 关闭过度动画
+      close(type) {
+        if (!this.animation)
+          return;
+        this.tranfromInit(true).step().run(() => {
+          this.isShow = false;
+          this.animationData = null;
+          this.animation = null;
+          let { opacity, transform } = this.styleInit(false);
+          this.opacity = opacity || 1;
+          this.transform = transform;
+          this.$emit("change", {
+            detail: this.isShow
+          });
+        });
+      },
+      // 处理动画开始前的默认样式
+      styleInit(type) {
+        let styles = {
+          transform: ""
+        };
+        let buildStyle = (type2, mode) => {
+          if (mode === "fade") {
+            styles.opacity = this.animationType(type2)[mode];
+          } else {
+            styles.transform += this.animationType(type2)[mode] + " ";
+          }
+        };
+        if (typeof this.modeClass === "string") {
+          buildStyle(type, this.modeClass);
+        } else {
+          this.modeClass.forEach((mode) => {
+            buildStyle(type, mode);
+          });
+        }
+        return styles;
+      },
+      // 处理内置组合动画
+      tranfromInit(type) {
+        let buildTranfrom = (type2, mode) => {
+          let aniNum = null;
+          if (mode === "fade") {
+            aniNum = type2 ? 0 : 1;
+          } else {
+            aniNum = type2 ? "-100%" : "0";
+            if (mode === "zoom-in") {
+              aniNum = type2 ? 0.8 : 1;
+            }
+            if (mode === "zoom-out") {
+              aniNum = type2 ? 1.2 : 1;
+            }
+            if (mode === "slide-right") {
+              aniNum = type2 ? "100%" : "0";
+            }
+            if (mode === "slide-bottom") {
+              aniNum = type2 ? "100%" : "0";
+            }
+          }
+          this.animation[this.animationMode()[mode]](aniNum);
+        };
+        if (typeof this.modeClass === "string") {
+          buildTranfrom(type, this.modeClass);
+        } else {
+          this.modeClass.forEach((mode) => {
+            buildTranfrom(type, mode);
+          });
+        }
+        return this.animation;
+      },
+      animationType(type) {
+        return {
+          fade: type ? 1 : 0,
+          "slide-top": `translateY(${type ? "0" : "-100%"})`,
+          "slide-right": `translateX(${type ? "0" : "100%"})`,
+          "slide-bottom": `translateY(${type ? "0" : "100%"})`,
+          "slide-left": `translateX(${type ? "0" : "-100%"})`,
+          "zoom-in": `scaleX(${type ? 1 : 0.8}) scaleY(${type ? 1 : 0.8})`,
+          "zoom-out": `scaleX(${type ? 1 : 1.2}) scaleY(${type ? 1 : 1.2})`
+        };
+      },
+      // 内置动画类型与实际动画对应字典
+      animationMode() {
+        return {
+          fade: "opacity",
+          "slide-top": "translateY",
+          "slide-right": "translateX",
+          "slide-bottom": "translateY",
+          "slide-left": "translateX",
+          "zoom-in": "scale",
+          "zoom-out": "scale"
+        };
+      },
+      // 驼峰转中横线
+      toLine(name) {
+        return name.replace(/([A-Z])/g, "-$1").toLowerCase();
+      }
+    }
+  };
+  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.withDirectives((vue.openBlock(), vue.createElementBlock("view", {
+      ref: "ani",
+      animation: $data.animationData,
+      class: vue.normalizeClass($props.customClass),
+      style: vue.normalizeStyle($options.transformStyles),
+      onClick: _cache[0] || (_cache[0] = (...args) => $options.onClick && $options.onClick(...args))
+    }, [
+      vue.renderSlot(_ctx.$slots, "default")
+    ], 14, ["animation"])), [
+      [vue.vShow, $data.isShow]
+    ]);
+  }
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$4], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uni-transition/components/uni-transition/uni-transition.vue"]]);
+  const _sfc_main$6 = {
+    name: "uniPopup",
+    components: {},
+    emits: ["change", "maskClick"],
+    props: {
+      // 开启动画
+      animation: {
+        type: Boolean,
+        default: true
+      },
+      // 弹出层类型，可选值，top: 顶部弹出层；bottom：底部弹出层；center：全屏弹出层
+      // message: 消息提示 ; dialog : 对话框
+      type: {
+        type: String,
+        default: "center"
+      },
+      // maskClick
+      isMaskClick: {
+        type: Boolean,
+        default: null
+      },
+      // TODO 2 个版本后废弃属性 ，使用 isMaskClick
+      maskClick: {
+        type: Boolean,
+        default: null
+      },
+      backgroundColor: {
+        type: String,
+        default: "none"
+      },
+      safeArea: {
+        type: Boolean,
+        default: true
+      },
+      maskBackgroundColor: {
+        type: String,
+        default: "rgba(0, 0, 0, 0.4)"
+      }
+    },
+    watch: {
+      /**
+       * 监听type类型
+       */
+      type: {
+        handler: function(type) {
+          if (!this.config[type])
+            return;
+          this[this.config[type]](true);
+        },
+        immediate: true
+      },
+      isDesktop: {
+        handler: function(newVal) {
+          if (!this.config[newVal])
+            return;
+          this[this.config[this.type]](true);
+        },
+        immediate: true
+      },
+      /**
+       * 监听遮罩是否可点击
+       * @param {Object} val
+       */
+      maskClick: {
+        handler: function(val) {
+          this.mkclick = val;
+        },
+        immediate: true
+      },
+      isMaskClick: {
+        handler: function(val) {
+          this.mkclick = val;
+        },
+        immediate: true
+      },
+      // H5 下禁止底部滚动
+      showPopup(show) {
+      }
+    },
+    data() {
+      return {
+        duration: 300,
+        ani: [],
+        showPopup: false,
+        showTrans: false,
+        popupWidth: 0,
+        popupHeight: 0,
+        config: {
+          top: "top",
+          bottom: "bottom",
+          center: "center",
+          left: "left",
+          right: "right",
+          message: "top",
+          dialog: "center",
+          share: "bottom"
+        },
+        maskClass: {
+          position: "fixed",
+          bottom: 0,
+          top: 0,
+          left: 0,
+          right: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.4)"
+        },
+        transClass: {
+          position: "fixed",
+          left: 0,
+          right: 0
+        },
+        maskShow: true,
+        mkclick: true,
+        popupstyle: this.isDesktop ? "fixforpc-top" : "top"
+      };
+    },
+    computed: {
+      isDesktop() {
+        return this.popupWidth >= 500 && this.popupHeight >= 500;
+      },
+      bg() {
+        if (this.backgroundColor === "" || this.backgroundColor === "none") {
+          return "transparent";
+        }
+        return this.backgroundColor;
+      }
+    },
+    mounted() {
+      const fixSize = () => {
+        const {
+          windowWidth,
+          windowHeight,
+          windowTop,
+          safeArea,
+          screenHeight,
+          safeAreaInsets
+        } = uni.getSystemInfoSync();
+        this.popupWidth = windowWidth;
+        this.popupHeight = windowHeight + (windowTop || 0);
+        if (safeArea && this.safeArea) {
+          this.safeAreaInsets = safeAreaInsets.bottom;
+        } else {
+          this.safeAreaInsets = 0;
+        }
+      };
+      fixSize();
+    },
+    // TODO vue3
+    unmounted() {
+      this.setH5Visible();
+    },
+    created() {
+      if (this.isMaskClick === null && this.maskClick === null) {
+        this.mkclick = true;
+      } else {
+        this.mkclick = this.isMaskClick !== null ? this.isMaskClick : this.maskClick;
+      }
+      if (this.animation) {
+        this.duration = 300;
+      } else {
+        this.duration = 0;
+      }
+      this.messageChild = null;
+      this.clearPropagation = false;
+      this.maskClass.backgroundColor = this.maskBackgroundColor;
+    },
+    methods: {
+      setH5Visible() {
+      },
+      /**
+       * 公用方法，不显示遮罩层
+       */
+      closeMask() {
+        this.maskShow = false;
+      },
+      /**
+       * 公用方法，遮罩层禁止点击
+       */
+      disableMask() {
+        this.mkclick = false;
+      },
+      // TODO nvue 取消冒泡
+      clear(e2) {
+        e2.stopPropagation();
+        this.clearPropagation = true;
+      },
+      open(direction) {
+        if (this.showPopup) {
+          return;
+        }
+        let innerType = ["top", "center", "bottom", "left", "right", "message", "dialog", "share"];
+        if (!(direction && innerType.indexOf(direction) !== -1)) {
+          direction = this.type;
+        }
+        if (!this.config[direction]) {
+          formatAppLog("error", "at uni_modules/uni-popup/components/uni-popup/uni-popup.vue:279", "缺少类型：", direction);
+          return;
+        }
+        this[this.config[direction]]();
+        this.$emit("change", {
+          show: true,
+          type: direction
+        });
+      },
+      close(type) {
+        this.showTrans = false;
+        this.$emit("change", {
+          show: false,
+          type: this.type
+        });
+        clearTimeout(this.timer);
+        this.timer = setTimeout(() => {
+          this.showPopup = false;
+        }, 300);
+      },
+      // TODO 处理冒泡事件，头条的冒泡事件有问题 ，先这样兼容
+      touchstart() {
+        this.clearPropagation = false;
+      },
+      onTap() {
+        if (this.clearPropagation) {
+          this.clearPropagation = false;
+          return;
+        }
+        this.$emit("maskClick");
+        if (!this.mkclick)
+          return;
+        this.close();
+      },
+      /**
+       * 顶部弹出样式处理
+       */
+      top(type) {
+        this.popupstyle = this.isDesktop ? "fixforpc-top" : "top";
+        this.ani = ["slide-top"];
+        this.transClass = {
+          position: "fixed",
+          left: 0,
+          right: 0,
+          backgroundColor: this.bg
+        };
+        if (type)
+          return;
+        this.showPopup = true;
+        this.showTrans = true;
+        this.$nextTick(() => {
+          if (this.messageChild && this.type === "message") {
+            this.messageChild.timerClose();
+          }
+        });
+      },
+      /**
+       * 底部弹出样式处理
+       */
+      bottom(type) {
+        this.popupstyle = "bottom";
+        this.ani = ["slide-bottom"];
+        this.transClass = {
+          position: "fixed",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          paddingBottom: this.safeAreaInsets + "px",
+          backgroundColor: this.bg
+        };
+        if (type)
+          return;
+        this.showPopup = true;
+        this.showTrans = true;
+      },
+      /**
+       * 中间弹出样式处理
+       */
+      center(type) {
+        this.popupstyle = "center";
+        this.ani = ["zoom-out", "fade"];
+        this.transClass = {
+          position: "fixed",
+          display: "flex",
+          flexDirection: "column",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+          justifyContent: "center",
+          alignItems: "center"
+        };
+        if (type)
+          return;
+        this.showPopup = true;
+        this.showTrans = true;
+      },
+      left(type) {
+        this.popupstyle = "left";
+        this.ani = ["slide-left"];
+        this.transClass = {
+          position: "fixed",
+          left: 0,
+          bottom: 0,
+          top: 0,
+          backgroundColor: this.bg,
+          display: "flex",
+          flexDirection: "column"
+        };
+        if (type)
+          return;
+        this.showPopup = true;
+        this.showTrans = true;
+      },
+      right(type) {
+        this.popupstyle = "right";
+        this.ani = ["slide-right"];
+        this.transClass = {
+          position: "fixed",
+          bottom: 0,
+          right: 0,
+          top: 0,
+          backgroundColor: this.bg,
+          display: "flex",
+          flexDirection: "column"
+        };
+        if (type)
+          return;
+        this.showPopup = true;
+        this.showTrans = true;
+      }
+    }
+  };
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_transition = resolveEasycom(vue.resolveDynamicComponent("uni-transition"), __easycom_0$1);
+    return $data.showPopup ? (vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        key: 0,
+        class: vue.normalizeClass(["uni-popup", [$data.popupstyle, $options.isDesktop ? "fixforpc-z-index" : ""]])
+      },
+      [
+        vue.createElementVNode(
+          "view",
+          {
+            onTouchstart: _cache[1] || (_cache[1] = (...args) => $options.touchstart && $options.touchstart(...args))
+          },
+          [
+            $data.maskShow ? (vue.openBlock(), vue.createBlock(_component_uni_transition, {
+              key: "1",
+              name: "mask",
+              "mode-class": "fade",
+              styles: $data.maskClass,
+              duration: $data.duration,
+              show: $data.showTrans,
+              onClick: $options.onTap
+            }, null, 8, ["styles", "duration", "show", "onClick"])) : vue.createCommentVNode("v-if", true),
+            vue.createVNode(_component_uni_transition, {
+              key: "2",
+              "mode-class": $data.ani,
+              name: "content",
+              styles: $data.transClass,
+              duration: $data.duration,
+              show: $data.showTrans,
+              onClick: $options.onTap
+            }, {
+              default: vue.withCtx(() => [
+                vue.createElementVNode(
+                  "view",
+                  {
+                    class: vue.normalizeClass(["uni-popup__wrapper", [$data.popupstyle]]),
+                    style: vue.normalizeStyle({ backgroundColor: $options.bg }),
+                    onClick: _cache[0] || (_cache[0] = (...args) => $options.clear && $options.clear(...args))
+                  },
+                  [
+                    vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+                  ],
+                  6
+                  /* CLASS, STYLE */
+                )
+              ]),
+              _: 3
+              /* FORWARDED */
+            }, 8, ["mode-class", "styles", "duration", "show", "onClick"])
+          ],
+          32
+          /* HYDRATE_EVENTS */
+        )
+      ],
+      2
+      /* CLASS */
+    )) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$3], ["__scopeId", "data-v-4dd3c44b"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uni-popup/components/uni-popup/uni-popup.vue"]]);
+  const props$1 = {
+    props: {
+      // 输入的值
+      modelValue: {
+        type: [String, Number],
+        default: ""
+      },
+      // 输入框类型
+      // number-数字输入键盘，app-vue下可以输入浮点数，app-nvue和小程序平台下只能输入整数
+      // idcard-身份证输入键盘，微信、支付宝、百度、QQ小程序
+      // digit-带小数点的数字键盘，App的nvue页面、微信、支付宝、百度、头条、QQ小程序
+      // text-文本输入键盘
+      type: {
+        type: String,
+        default: "text"
+      },
+      // 是否禁用输入框
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      // 禁用状态时的背景色
+      disabledColor: {
+        type: String,
+        default: "#f5f7fa"
+      },
+      // 是否显示清除控件
+      clearable: {
+        type: Boolean,
+        default: false
+      },
+      // 是否密码类型
+      password: {
+        type: Boolean,
+        default: false
+      },
+      // 最大输入长度，设置为 -1 的时候不限制最大长度
+      maxlength: {
+        type: [String, Number],
+        default: -1
+      },
+      // 	输入框为空时的占位符
+      placeholder: {
+        type: String,
+        default: null
+      },
+      // 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/
+      placeholderClass: {
+        type: String,
+        default: "input-placeholder"
+      },
+      // 指定placeholder的样式
+      placeholderStyle: {
+        type: [String, Object],
+        default: "color: #c0c4cc"
+      },
+      // 设置右下角按钮的文字，有效值：send|search|next|go|done，兼容性详见uni-app文档
+      // https://uniapp.dcloud.io/component/input
+      // https://uniapp.dcloud.io/component/textarea
+      confirmType: {
+        type: String,
+        default: "done"
+      },
+      // 点击键盘右下角按钮时是否保持键盘不收起，H5无效
+      confirmHold: {
+        type: Boolean,
+        default: false
+      },
+      // focus时，点击页面的时候不收起键盘，微信小程序有效
+      holdKeyboard: {
+        type: Boolean,
+        default: false
+      },
+      // 自动获取焦点
+      // 在 H5 平台能否聚焦以及软键盘是否跟随弹出，取决于当前浏览器本身的实现。nvue 页面不支持，需使用组件的 focus()、blur() 方法控制焦点
+      focus: {
+        type: Boolean,
+        default: false
+      },
+      // 键盘收起时，是否自动失去焦点，目前仅App3.0.0+有效
+      autoBlur: {
+        type: Boolean,
+        default: false
+      },
+      // 指定focus时光标的位置
+      cursor: {
+        type: [String, Number],
+        default: -1
+      },
+      // 输入框聚焦时底部与键盘的距离
+      cursorSpacing: {
+        type: [String, Number],
+        default: 30
+      },
+      // 光标起始位置，自动聚集时有效，需与selection-end搭配使用
+      selectionStart: {
+        type: [String, Number],
+        default: -1
+      },
+      // 光标结束位置，自动聚集时有效，需与selection-start搭配使用
+      selectionEnd: {
+        type: [String, Number],
+        default: -1
+      },
+      // 键盘弹起时，是否自动上推页面
+      adjustPosition: {
+        type: Boolean,
+        default: true
+      },
+      // 输入框内容对齐方式，可选值为：left|center|right
+      inputAlign: {
+        type: String,
+        default: "left"
+      },
+      // 输入框字体的大小
+      fontSize: {
+        type: [String, Number],
+        default: "14px"
+      },
+      // 输入框字体颜色
+      color: {
+        type: String,
+        default: "#303133"
+      },
+      // 输入框前置图标
+      prefixIcon: {
+        type: String,
+        default: ""
+      },
+      // 前置图标样式，对象或字符串
+      prefixIconStyle: {
+        type: [String, Object],
+        default: ""
+      },
+      // 输入框后置图标
+      suffixIcon: {
+        type: String,
+        default: ""
+      },
+      // 后置图标样式，对象或字符串
+      suffixIconStyle: {
+        type: [String, Object],
+        default: ""
+      },
+      // 边框类型，surround-四周边框，bottom-底部边框，none-无边框
+      border: {
+        type: String,
+        default: "surround"
+      },
+      // 是否只读，与disabled不同之处在于disabled会置灰组件，而readonly则不会
+      readonly: {
+        type: Boolean,
+        default: false
+      },
+      // 输入框形状，circle-圆形，square-方形
+      shape: {
+        type: String,
+        default: "square"
+      },
+      // 用于处理或者过滤输入框内容的方法
+      formatter: {
+        type: [Function, null],
+        default: null
+      },
+      // 是否忽略组件内对文本合成系统事件的处理
+      ignoreCompositionEvent: {
+        type: Boolean,
+        default: true
+      },
+      ...(_H = (_G = uni.$uv) == null ? void 0 : _G.props) == null ? void 0 : _H.input
+    }
+  };
+  const _sfc_main$5 = {
+    name: "uv-input",
+    mixins: [mpMixin, mixin, props$1],
+    data() {
+      return {
+        // 输入框的值
+        innerValue: "",
+        // 是否处于获得焦点状态
+        focused: false,
+        // value是否第一次变化，在watch中，由于加入immediate属性，会在第一次触发，此时不应该认为value发生了变化
+        firstChange: true,
+        // value绑定值的变化是由内部还是外部引起的
+        changeFromInner: false,
+        // 过滤处理方法
+        innerFormatter: (value2) => value2
+      };
+    },
+    watch: {
+      modelValue: {
+        immediate: true,
+        handler(newVal, oldVal) {
+          this.innerValue = newVal;
+          this.firstChange = false;
+          this.changeFromInner = false;
+        }
+      }
+    },
+    computed: {
+      // 是否显示清除控件
+      isShowClear() {
+        const { clearable, readonly, focused, innerValue } = this;
+        return !!clearable && !readonly && !!focused && innerValue !== "";
+      },
+      // 组件的类名
+      inputClass() {
+        let classes = [], { border, disabled, shape } = this;
+        border === "surround" && (classes = classes.concat(["uv-border", "uv-input--radius"]));
+        classes.push(`uv-input--${shape}`);
+        border === "bottom" && (classes = classes.concat([
+          "uv-border-bottom",
+          "uv-input--no-radius"
+        ]));
+        return classes.join(" ");
+      },
+      // 组件的样式
+      wrapperStyle() {
+        const style = {};
+        if (this.disabled) {
+          style.backgroundColor = this.disabledColor;
+        }
+        if (this.border === "none") {
+          style.padding = "0";
+        } else {
+          style.paddingTop = "6px";
+          style.paddingBottom = "6px";
+          style.paddingLeft = "9px";
+          style.paddingRight = "9px";
+        }
+        return this.$uv.deepMerge(style, this.$uv.addStyle(this.customStyle));
+      },
+      // 输入框的样式
+      inputStyle() {
+        const style = {
+          color: this.color,
+          fontSize: this.$uv.addUnit(this.fontSize),
+          textAlign: this.inputAlign
+        };
+        return style;
+      }
+    },
+    methods: {
+      // 在微信小程序中，不支持将函数当做props参数，故只能通过ref形式调用
+      setFormatter(e2) {
+        this.innerFormatter = e2;
+      },
+      // 当键盘输入时，触发input事件
+      onInput(e2) {
+        let { value: value2 = "" } = e2.detail || {};
+        const formatter = this.formatter || this.innerFormatter;
+        const formatValue = formatter(value2);
+        this.innerValue = value2;
+        this.$nextTick(() => {
+          this.innerValue = formatValue;
+          this.valueChange();
+        });
+      },
+      // 输入框失去焦点时触发
+      onBlur(event) {
+        this.$emit("blur", event.detail.value);
+        this.$uv.sleep(50).then(() => {
+          this.focused = false;
+        });
+        this.$uv.formValidate(this, "blur");
+      },
+      // 输入框聚焦时触发
+      onFocus(event) {
+        this.focused = true;
+        this.$emit("focus");
+      },
+      // 点击完成按钮时触发
+      onConfirm(event) {
+        this.$emit("confirm", this.innerValue);
+      },
+      // 键盘高度发生变化的时候触发此事件
+      // 兼容性：微信小程序2.7.0+、App 3.1.0+
+      onkeyboardheightchange() {
+        this.$emit("keyboardheightchange");
+      },
+      // 内容发生变化，进行处理
+      valueChange() {
+        const value2 = this.innerValue;
+        this.$nextTick(() => {
+          this.$emit("update:modelValue", value2);
+          this.changeFromInner = true;
+          this.$emit("change", value2);
+          this.$uv.formValidate(this, "change");
+        });
+      },
+      // 点击清除控件
+      onClear() {
+        this.innerValue = "";
+        this.$nextTick(() => {
+          this.valueChange();
+          this.$emit("clear");
+        });
+      },
+      /**
+       * 在安卓nvue上，事件无法冒泡
+       * 在某些时间，我们希望监听uv-from-item的点击事件，此时会导致点击uv-form-item内的uv-input后
+       * 无法触发uv-form-item的点击事件，这里通过手动调用uv-form-item的方法进行触发
+       */
+      clickHandler() {
+      }
+    }
+  };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_4$1);
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["uv-input", $options.inputClass]),
+        style: vue.normalizeStyle([$options.wrapperStyle])
+      },
+      [
+        vue.createElementVNode("view", { class: "uv-input__content" }, [
+          _ctx.prefixIcon || _ctx.$slots.prefix ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 0,
+            class: "uv-input__content__prefix-icon"
+          }, [
+            vue.renderSlot(_ctx.$slots, "prefix", {}, () => [
+              vue.createVNode(_component_uv_icon, {
+                name: _ctx.prefixIcon,
+                size: "18",
+                customStyle: _ctx.prefixIconStyle
+              }, null, 8, ["name", "customStyle"])
+            ], true)
+          ])) : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode("view", {
+            class: "uv-input__content__field-wrapper",
+            onClick: _cache[6] || (_cache[6] = (...args) => $options.clickHandler && $options.clickHandler(...args))
+          }, [
+            vue.createCommentVNode(" 根据uni-app的input组件文档，H5和APP中只要声明了password参数(无论true还是false)，type均失效，此时\r\n					为了防止type=number时，又存在password属性，type无效，此时需要设置password为undefined\r\n				 "),
+            vue.createElementVNode("input", {
+              class: "uv-input__content__field-wrapper__field",
+              style: vue.normalizeStyle([$options.inputStyle]),
+              type: _ctx.type,
+              focus: _ctx.focus,
+              cursor: _ctx.cursor,
+              value: $data.innerValue,
+              "auto-blur": _ctx.autoBlur,
+              disabled: _ctx.disabled || _ctx.readonly,
+              maxlength: _ctx.maxlength,
+              placeholder: _ctx.placeholder,
+              "placeholder-style": _ctx.placeholderStyle,
+              "placeholder-class": _ctx.placeholderClass,
+              "confirm-type": _ctx.confirmType,
+              "confirm-hold": _ctx.confirmHold,
+              "hold-keyboard": _ctx.holdKeyboard,
+              "cursor-spacing": _ctx.cursorSpacing,
+              "adjust-position": _ctx.adjustPosition,
+              "selection-end": _ctx.selectionEnd,
+              "selection-start": _ctx.selectionStart,
+              password: _ctx.password || _ctx.type === "password" || void 0,
+              ignoreCompositionEvent: _ctx.ignoreCompositionEvent,
+              onInput: _cache[0] || (_cache[0] = (...args) => $options.onInput && $options.onInput(...args)),
+              onBlur: _cache[1] || (_cache[1] = (...args) => $options.onBlur && $options.onBlur(...args)),
+              onFocus: _cache[2] || (_cache[2] = (...args) => $options.onFocus && $options.onFocus(...args)),
+              onConfirm: _cache[3] || (_cache[3] = (...args) => $options.onConfirm && $options.onConfirm(...args)),
+              onKeyboardheightchange: _cache[4] || (_cache[4] = (...args) => $options.onkeyboardheightchange && $options.onkeyboardheightchange(...args)),
+              onClick: _cache[5] || (_cache[5] = () => {
+              })
+            }, null, 44, ["type", "focus", "cursor", "value", "auto-blur", "disabled", "maxlength", "placeholder", "placeholder-style", "placeholder-class", "confirm-type", "confirm-hold", "hold-keyboard", "cursor-spacing", "adjust-position", "selection-end", "selection-start", "password", "ignoreCompositionEvent"])
+          ]),
+          $options.isShowClear ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 1,
+            class: "uv-input__content__clear",
+            onClick: _cache[7] || (_cache[7] = (...args) => $options.onClear && $options.onClear(...args))
+          }, [
+            vue.createVNode(_component_uv_icon, {
+              name: "close",
+              size: "11",
+              color: "#ffffff",
+              customStyle: "line-height: 12px"
+            })
+          ])) : vue.createCommentVNode("v-if", true),
+          _ctx.suffixIcon || _ctx.$slots.suffix ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 2,
+            class: "uv-input__content__subfix-icon"
+          }, [
+            vue.renderSlot(_ctx.$slots, "suffix", {}, () => [
+              vue.createVNode(_component_uv_icon, {
+                name: _ctx.suffixIcon,
+                size: "18",
+                customStyle: _ctx.suffixIconStyle
+              }, null, 8, ["name", "customStyle"])
+            ], true)
+          ])) : vue.createCommentVNode("v-if", true)
+        ])
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$2], ["__scopeId", "data-v-651602aa"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-input/components/uv-input/uv-input.vue"]]);
   const artileText = `
 缓存可以减少网络 IO 消耗，提高访问速度。浏览器缓存是一种操作简单、效果显著的前端性能优化手段。对于这个操作的必要性，Chrome 官方给出的解释似乎更有说服力一些：
 
@@ -16710,13 +17887,446 @@ Push Cache 是指 HTTP2 在 server push 阶段存在的缓存。这块的知识�
 
 但页面的数据存储方案除了缓存，还有本地存储。在下一节中，我们就将围绕本地存储展开探索。
 `;
-  const _sfc_main$1 = {
+  const props = {
+    props: {
+      // 输入框的内容
+      modelValue: {
+        type: [String, Number],
+        default: ""
+      },
+      // 输入框为空时占位符
+      placeholder: {
+        type: [String, Number],
+        default: ""
+      },
+      // 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/
+      placeholderClass: {
+        type: String,
+        default: "textarea-placeholder"
+      },
+      // 指定placeholder的样式
+      placeholderStyle: {
+        type: [String, Object],
+        default: "color: #c0c4cc"
+      },
+      // 输入框高度
+      height: {
+        type: [String, Number],
+        default: 70
+      },
+      // 设置键盘右下角按钮的文字，仅微信小程序，App-vue和H5有效
+      confirmType: {
+        type: String,
+        default: "done"
+      },
+      // 是否禁用
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      // 是否显示统计字数
+      count: {
+        type: Boolean,
+        default: false
+      },
+      // 是否自动获取焦点，nvue不支持，H5取决于浏览器的实现
+      focus: {
+        type: Boolean,
+        default: false
+      },
+      // 是否自动增加高度
+      autoHeight: {
+        type: Boolean,
+        default: false
+      },
+      // 如果textarea是在一个position:fixed的区域，需要显示指定属性fixed为true
+      fixed: {
+        type: Boolean,
+        default: false
+      },
+      // 指定光标与键盘的距离
+      cursorSpacing: {
+        type: Number,
+        default: 0
+      },
+      // 指定focus时的光标位置
+      cursor: {
+        type: [String, Number],
+        default: ""
+      },
+      // 是否显示键盘上方带有”完成“按钮那一栏，
+      showConfirmBar: {
+        type: Boolean,
+        default: true
+      },
+      // 光标起始位置，自动聚焦时有效，需与selection-end搭配使用
+      selectionStart: {
+        type: Number,
+        default: -1
+      },
+      // 光标结束位置，自动聚焦时有效，需与selection-start搭配使用
+      selectionEnd: {
+        type: Number,
+        default: -1
+      },
+      // 键盘弹起时，是否自动上推页面
+      adjustPosition: {
+        type: Boolean,
+        default: true
+      },
+      // 是否去掉 iOS 下的默认内边距，只微信小程序有效
+      disableDefaultPadding: {
+        type: Boolean,
+        default: false
+      },
+      // focus时，点击页面的时候不收起键盘，只微信小程序有效
+      holdKeyboard: {
+        type: Boolean,
+        default: false
+      },
+      // 最大输入长度，设置为 -1 的时候不限制最大长度
+      maxlength: {
+        type: [String, Number],
+        default: 140
+      },
+      // 边框类型，surround-四周边框，bottom-底部边框
+      border: {
+        type: String,
+        default: "surround"
+      },
+      // 用于处理或者过滤输入框内容的方法
+      formatter: {
+        type: [Function, null],
+        default: null
+      },
+      // 是否忽略组件内对文本合成系统事件的处理
+      ignoreCompositionEvent: {
+        type: Boolean,
+        default: true
+      },
+      ...(_J = (_I = uni.$uv) == null ? void 0 : _I.props) == null ? void 0 : _J.textarea
+    }
+  };
+  const _sfc_main$4 = {
+    name: "uv-textarea",
+    mixins: [mpMixin, mixin, props],
+    data() {
+      return {
+        // 输入框的值
+        innerValue: "",
+        // 是否处于获得焦点状态
+        focused: false,
+        // value是否第一次变化，在watch中，由于加入immediate属性，会在第一次触发，此时不应该认为value发生了变化
+        firstChange: true,
+        // value绑定值的变化是由内部还是外部引起的
+        changeFromInner: false,
+        // 过滤处理方法
+        innerFormatter: (value2) => value2
+      };
+    },
+    watch: {
+      modelValue: {
+        immediate: true,
+        handler(newVal, oldVal) {
+          this.innerValue = newVal;
+          this.firstChange = false;
+          this.changeFromInner = false;
+        }
+      }
+    },
+    computed: {
+      // 组件的类名
+      textareaClass() {
+        let classes = [], { border, disabled } = this;
+        border === "surround" && (classes = classes.concat(["uv-border", "uv-textarea--radius"]));
+        border === "bottom" && (classes = classes.concat(["uv-border-bottom", "uv-textarea--no-radius"]));
+        disabled && classes.push("uv-textarea--disabled");
+        return classes.join(" ");
+      },
+      // 组件的样式
+      textareaStyle() {
+        const style = {};
+        return this.$uv.deepMerge(style, this.$uv.addStyle(this.customStyle));
+      },
+      maxlen() {
+        return this.maxlength < 0 ? 140 : this.maxlength;
+      }
+    },
+    methods: {
+      // 在微信小程序中，不支持将函数当做props参数，故只能通过ref形式调用
+      setFormatter(e2) {
+        this.innerFormatter = e2;
+      },
+      onFocus(e2) {
+        this.$emit("focus", e2);
+      },
+      onBlur(e2) {
+        this.$emit("blur", e2);
+        this.$uv.formValidate(this, "blur");
+      },
+      onLinechange(e2) {
+        this.$emit("linechange", e2);
+      },
+      onInput(e2) {
+        let { value: value2 = "" } = e2.detail || {};
+        const formatter = this.formatter || this.innerFormatter;
+        const formatValue = formatter(value2);
+        this.innerValue = value2;
+        this.$nextTick(() => {
+          this.innerValue = formatValue;
+          this.valueChange();
+        });
+      },
+      // 内容发生变化，进行处理
+      valueChange() {
+        const value2 = this.innerValue;
+        this.$nextTick(() => {
+          this.$emit("update:modelValue", value2);
+          this.changeFromInner = true;
+          this.$emit("change", value2);
+          this.$uv.formValidate(this, "change");
+        });
+      },
+      onConfirm(e2) {
+        this.$emit("confirm", e2);
+      },
+      onKeyboardheightchange(e2) {
+        this.$emit("keyboardheightchange", e2);
+      }
+    }
+  };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["uv-textarea", $options.textareaClass]),
+        style: vue.normalizeStyle([$options.textareaStyle])
+      },
+      [
+        vue.createElementVNode("textarea", {
+          class: "uv-textarea__field",
+          value: $data.innerValue,
+          style: vue.normalizeStyle({ height: _ctx.$uv.addUnit(_ctx.height) }),
+          placeholder: _ctx.placeholder,
+          "placeholder-style": _ctx.$uv.addStyle(_ctx.placeholderStyle, "string"),
+          "placeholder-class": _ctx.placeholderClass,
+          disabled: _ctx.disabled,
+          focus: _ctx.focus,
+          autoHeight: _ctx.autoHeight,
+          fixed: _ctx.fixed,
+          cursorSpacing: _ctx.cursorSpacing,
+          cursor: _ctx.cursor,
+          showConfirmBar: _ctx.showConfirmBar,
+          selectionStart: _ctx.selectionStart,
+          selectionEnd: _ctx.selectionEnd,
+          adjustPosition: _ctx.adjustPosition,
+          disableDefaultPadding: _ctx.disableDefaultPadding,
+          holdKeyboard: _ctx.holdKeyboard,
+          maxlength: $options.maxlen,
+          confirmType: _ctx.confirmType,
+          ignoreCompositionEvent: _ctx.ignoreCompositionEvent,
+          onFocus: _cache[0] || (_cache[0] = (...args) => $options.onFocus && $options.onFocus(...args)),
+          onBlur: _cache[1] || (_cache[1] = (...args) => $options.onBlur && $options.onBlur(...args)),
+          onLinechange: _cache[2] || (_cache[2] = (...args) => $options.onLinechange && $options.onLinechange(...args)),
+          onInput: _cache[3] || (_cache[3] = (...args) => $options.onInput && $options.onInput(...args)),
+          onConfirm: _cache[4] || (_cache[4] = (...args) => $options.onConfirm && $options.onConfirm(...args)),
+          onKeyboardheightchange: _cache[5] || (_cache[5] = (...args) => $options.onKeyboardheightchange && $options.onKeyboardheightchange(...args))
+        }, null, 44, ["value", "placeholder", "placeholder-style", "placeholder-class", "disabled", "focus", "autoHeight", "fixed", "cursorSpacing", "cursor", "showConfirmBar", "selectionStart", "selectionEnd", "adjustPosition", "disableDefaultPadding", "holdKeyboard", "maxlength", "confirmType", "ignoreCompositionEvent"]),
+        _ctx.count ? (vue.openBlock(), vue.createElementBlock(
+          "text",
+          {
+            key: 0,
+            class: "uv-textarea__count",
+            style: vue.normalizeStyle({
+              "background-color": _ctx.disabled ? "transparent" : "#fff"
+            })
+          },
+          vue.toDisplayString($data.innerValue.length) + "/" + vue.toDisplayString($options.maxlen),
+          5
+          /* TEXT, STYLE */
+        )) : vue.createCommentVNode("v-if", true)
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$1], ["__scopeId", "data-v-d5a7e73a"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/uni_modules/uv-textarea/components/uv-textarea/uv-textarea.vue"]]);
+  const _sfc_main$3 = {
+    __name: "forum-comment",
+    setup(__props) {
+      const emojiList = [
+        "😀",
+        "😃",
+        "😄",
+        "😁",
+        "😆",
+        "😅",
+        "🤣",
+        "🙂",
+        "🙃",
+        "😉",
+        "😊",
+        "😇",
+        "🥰",
+        "😍",
+        "🤩",
+        "😘",
+        "😗",
+        "😚",
+        "😙",
+        "😋",
+        "😛",
+        "😜",
+        "🤪",
+        "😝",
+        "🤑",
+        "🤗",
+        "🤭",
+        "🤫",
+        "🤔",
+        "🤐"
+      ];
+      const textAreaValue = vue.ref("");
+      const showEmojiFlag = vue.ref(false);
+      const corsurTop = vue.ref(70);
+      const pointPosition = vue.ref(0);
+      const tempValue = vue.ref("");
+      const pointHandler = (value2, cursor) => {
+        pointPosition.value = value2.detail.cursor;
+        tempValue.value = value2.detail.value;
+      };
+      const emojiBoxShow = () => {
+        formatAppLog("log", "at components/forum-comment/forum-comment.vue:58", showEmojiFlag.value);
+        showEmojiFlag.value = !showEmojiFlag.value;
+        uni.hideKeyboard();
+      };
+      const emojiClickHandle = (item) => {
+        formatAppLog("log", "at components/forum-comment/forum-comment.vue:64", item);
+        const finishString = tempValue.value.slice(0, pointPosition.value) + item + tempValue.value.slice(pointPosition.value);
+        formatAppLog("log", "at components/forum-comment/forum-comment.vue:66", finishString);
+        pointPosition.value += item.length;
+        tempValue.value = finishString;
+        textAreaValue.value = finishString;
+      };
+      const uploadImg = () => {
+        uni.chooseImage({
+          success: (chooseImageRes) => {
+            const tempFilePaths = chooseImageRes.tempFilePaths;
+            uni.uploadFile({
+              url: "https://www.example.com/upload",
+              //仅为示例，非真实的接口地址
+              filePath: tempFilePaths[0],
+              name: "file",
+              formData: {
+                "user": "test"
+              },
+              success: (uploadFileRes) => {
+                formatAppLog("log", "at components/forum-comment/forum-comment.vue:88", uploadFileRes.data);
+              }
+            });
+          }
+        });
+      };
+      return (_ctx, _cache) => {
+        const _component_uv_textarea = resolveEasycom(vue.resolveDynamicComponent("uv-textarea"), __easycom_0);
+        const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_4$1);
+        const _component_uv_button = resolveEasycom(vue.resolveDynamicComponent("uv-button"), __easycom_0$2);
+        return vue.openBlock(), vue.createElementBlock("view", { class: "comment-body" }, [
+          vue.createElementVNode("view", { class: "comment-container" }, [
+            vue.createElementVNode("view", { class: "input-box" }, [
+              vue.createVNode(_component_uv_textarea, {
+                onBlur: pointHandler,
+                cursorSpacing: corsurTop.value,
+                modelValue: textAreaValue.value,
+                "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => textAreaValue.value = $event),
+                count: "",
+                placeholder: "请输入内容"
+              }, null, 8, ["cursorSpacing", "modelValue"])
+            ]),
+            vue.createElementVNode("view", { class: "function-list" }, [
+              vue.createElementVNode("view", { class: "left-list" }, [
+                vue.createElementVNode("view", {
+                  class: "emoji-box",
+                  onClick: _cache[1] || (_cache[1] = ($event) => emojiBoxShow())
+                }, [
+                  vue.createVNode(_component_uv_icon, {
+                    name: showEmojiFlag.value ? "pause-circle-fill" : "pause-circle",
+                    color: "#6fca4f",
+                    size: "35"
+                  }, null, 8, ["name"])
+                ]),
+                vue.createElementVNode("view", {
+                  class: "img-upload",
+                  onClick: _cache[2] || (_cache[2] = ($event) => uploadImg())
+                }, [
+                  vue.createVNode(_component_uv_icon, {
+                    name: "photo",
+                    color: "#6fca4f",
+                    size: "35"
+                  })
+                ])
+              ]),
+              vue.createElementVNode("view", { class: "right-list" }, [
+                vue.createVNode(_component_uv_button, {
+                  type: "success",
+                  plain: true,
+                  hairline: true,
+                  text: "发送"
+                })
+              ])
+            ]),
+            vue.withDirectives(vue.createElementVNode(
+              "view",
+              { class: "emoji-list" },
+              [
+                vue.createElementVNode("view", { class: "emoji-list-container" }, [
+                  (vue.openBlock(), vue.createElementBlock(
+                    vue.Fragment,
+                    null,
+                    vue.renderList(emojiList, (item, index2) => {
+                      return vue.createElementVNode("view", {
+                        class: "emoji-item",
+                        onClick: ($event) => emojiClickHandle(item)
+                      }, vue.toDisplayString(item), 9, ["onClick"]);
+                    }),
+                    64
+                    /* STABLE_FRAGMENT */
+                  ))
+                ])
+              ],
+              512
+              /* NEED_PATCH */
+            ), [
+              [vue.vShow, showEmojiFlag.value]
+            ])
+          ])
+        ]);
+      };
+    }
+  };
+  const forumComment = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-d55485dd"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/components/forum-comment/forum-comment.vue"]]);
+  const _sfc_main$2 = {
     __name: "article",
     setup(__props) {
+      const popup = vue.ref(null);
+      onLoad((options) => {
+        formatAppLog("log", "at pages/article/article.vue:91", options.articleId);
+      });
+      vue.onMounted(() => {
+        formatAppLog("log", "at pages/article/article.vue:96", popup.value.show);
+      });
+      vue.ref(false);
+      const that = vue.getCurrentInstance();
+      const commitOpen = () => {
+        that.refs.popup.open();
+      };
       const mdvalue = `${artileText}`;
       return (_ctx, _cache) => {
-        const _component_uv_button = resolveEasycom(vue.resolveDynamicComponent("uv-button"), __easycom_0);
+        const _component_uv_button = resolveEasycom(vue.resolveDynamicComponent("uv-button"), __easycom_0$2);
         const _component_ua_markdown = resolveEasycom(vue.resolveDynamicComponent("ua-markdown"), __easycom_1);
+        const _component_uni_popup = resolveEasycom(vue.resolveDynamicComponent("uni-popup"), __easycom_2);
+        const _component_uv_input = resolveEasycom(vue.resolveDynamicComponent("uv-input"), __easycom_3);
+        const _component_uv_icon = resolveEasycom(vue.resolveDynamicComponent("uv-icon"), __easycom_4$1);
         return vue.openBlock(), vue.createElementBlock("view", { class: "article-body" }, [
           vue.createElementVNode("view", { class: "article-header-info" }, [
             vue.createElementVNode("view", { class: "header-container" }, [
@@ -16777,13 +18387,83 @@ Push Cache 是指 HTTP2 在 server push 阶段存在的缓存。这块的知识�
             ]),
             vue.createElementVNode("view", { class: "article-content" }, [
               vue.createVNode(_component_ua_markdown, { source: mdvalue })
+            ]),
+            vue.createElementVNode("view", { class: "article-footer" }, [
+              vue.createVNode(
+                _component_uni_popup,
+                {
+                  ref_key: "popup",
+                  ref: popup,
+                  type: "bottom"
+                },
+                {
+                  default: vue.withCtx(() => [
+                    vue.createVNode(forumComment)
+                  ]),
+                  _: 1
+                  /* STABLE */
+                },
+                512
+                /* NEED_PATCH */
+              ),
+              vue.createCommentVNode(" 评论按钮区 "),
+              vue.createElementVNode("view", { class: "footer-function-list" }, [
+                vue.createElementVNode("view", { class: "left-function-list" }, [
+                  vue.createVNode(_component_uv_input, {
+                    placeholder: "评论一下吧...",
+                    onClick: commitOpen,
+                    border: "surround",
+                    disabled: ""
+                  }),
+                  vue.createCommentVNode(' <button type="default" >评论</button> ')
+                ]),
+                vue.createElementVNode("view", { class: "right-function-list" }, [
+                  vue.createElementVNode("view", { class: "directory" }, [
+                    vue.createVNode(_component_uv_icon, {
+                      name: "order",
+                      color: "#2979ff",
+                      size: "28"
+                    })
+                  ]),
+                  vue.createElementVNode("view", { class: "" }, [
+                    vue.createVNode(_component_uv_icon, {
+                      name: "chat",
+                      color: "#2979ff",
+                      size: "28"
+                    })
+                  ]),
+                  vue.createElementVNode("view", { class: "" }, [
+                    vue.createVNode(_component_uv_icon, {
+                      name: "thumb-up",
+                      color: "#2979ff",
+                      size: "28"
+                    })
+                  ]),
+                  vue.createElementVNode("view", { class: "" }, [
+                    vue.createVNode(_component_uv_icon, {
+                      name: "star",
+                      color: "#2979ff",
+                      size: "28"
+                    })
+                  ])
+                ])
+              ])
             ])
           ])
         ]);
       };
     }
   };
-  const PagesArticleArticle = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-33268ad9"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/article/article.vue"]]);
+  const PagesArticleArticle = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-33268ad9"], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/article/article.vue"]]);
+  const _sfc_main$1 = {
+    data() {
+      return {};
+    }
+  };
+  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view");
+  }
+  const PagesShoppingShopping = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "D:/WorkSpace/StudySpace/Study-WORK/web/Project/hunauforum-web/pages/shopping/shopping.vue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/login/login", PagesLoginLogin);
   __definePage("pages/changepassword/changepassword", PagesChangepasswordChangepassword);
@@ -16794,6 +18474,7 @@ Push Cache 是指 HTTP2 在 server push 阶段存在的缓存。这块的知识�
   __definePage("pages/passwdupdated/passwdupdated", PagesPasswdupdatedPasswdupdated);
   __definePage("pages/search/search", PagesSearchSearch);
   __definePage("pages/article/article", PagesArticleArticle);
+  __definePage("pages/shopping/shopping", PagesShoppingShopping);
   const _sfc_main = {
     onLaunch: function() {
       formatAppLog("log", "at App.vue:4", "App Launch");
