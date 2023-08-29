@@ -20,27 +20,29 @@
 			</view>
 			<uv-sticky :offset-top="barHeight"> 
 				 <view class="tabs-box">
-				 	<uv-tabs :list="list1" @click="click"
-					
-					lineColor="var(--line-color)"
-					
-					:activeStyle="{
-						color: 'var(--text-active-color)',
-						fontWeight: 'bold',
-						transform: 'scale(1.05)'
-					}"
-					:inactiveStyle="{
-						color: 'var(--text-inactive-color)',
-						transform: 'scale(1)'
-					}"
-					itemStyle="padding-left: 15px; padding-right: 15px; height: 34px;"
-					>></uv-tabs>
+				 	<view class="tabs-container">
+				 		<uv-tabs :list="list1" @click="click"
+				 		
+				 		lineColor="var(--line-color)"
+				 		
+				 		:activeStyle="{
+				 			color: 'var(--text-active-color)',
+				 			fontWeight: 'bold',
+				 			transform: 'scale(1.05)'
+				 		}"
+				 		:inactiveStyle="{
+				 			color: 'var(--text-inactive-color)',
+				 			transform: 'scale(1)'
+				 		}"
+				 		itemStyle="padding-left: 15px; padding-right: 15px; height: 34px;"
+				 		>></uv-tabs>
+				 	</view>
 				 </view>
 			</uv-sticky>
 			<view class="swiper-container">
 				<uv-swiper
 				   :list="list2"
-				   height="200"
+				   height="150"
 				   indicator
 				   previousMargin="30"
 				   nextMargin="30"
@@ -52,8 +54,8 @@
 				></uv-swiper>
 			</view>
 			
-			<view class="scroll-box">
-				 <mxio-scroll-x   :dataSource="dataSource" :barWidth="barWidth" :colList="11" :column="5" :barShow="barShow" @scrollItemEmitsClick="scrollItemEmitsClick">
+			<view class="scroll-box" >
+				 <mxio-scroll-x   :dataSource="dataSource"  :colList="11" :column="5" :barShow="true" @scrollItemEmitsClick="scrollItemEmitsClick">
 				        </mxio-scroll-x>
 			</view>
 			
@@ -70,17 +72,17 @@
 								</view>
 							</view>
 							<view slot="actions" class="card-actions">
-								<view class="card-actions-item" @click="actionsClick('分享')">
-									<uni-icons type="pengyouquan" size="18" color="#999"></uni-icons>
-									<text class="card-actions-item-text">分享</text>
-								</view>
 								<view class="card-actions-item" @click="actionsClick('点赞')">
-									<uni-icons type="heart" size="18" color="#999"></uni-icons>
+									<uni-icons type="hand-up" size="18" color="#999"></uni-icons>
 									<text class="card-actions-item-text">点赞</text>
 								</view>
 								<view class="card-actions-item" @click="actionsClick('评论')">
 									<uni-icons type="chatbubble" size="18" color="#999"></uni-icons>
 									<text class="card-actions-item-text">评论</text>
+								</view>
+								<view class="card-actions-item" @click="actionsClick('分享')">
+									<uni-icons type="redo" size="18" color="#999"></uni-icons>
+									<text class="card-actions-item-text">转发</text>
 								</view>
 							</view>
 						</view>
@@ -90,19 +92,7 @@
 			</view>
 
 		</view>
-		
-		<uv-tabbar
-			:value="value6"
-			@change="name => value6 = name"
-			:fixed="true"
-			:placeholder="true"
-			:safeAreaInsetBottom="true"
-		>
-			<uv-tabbar-item text="首页" icon="home" ></uv-tabbar-item>
-			<uv-tabbar-item text="放映厅" icon="photo" ></uv-tabbar-item>
-			<uv-tabbar-item text="直播" icon="play-right" ></uv-tabbar-item>
-			<uv-tabbar-item text="我的" icon="account" ></uv-tabbar-item>
-		</uv-tabbar>
+		<uv-back-top :scroll-top="scrollTop"></uv-back-top>
 	</view>
 
 
@@ -113,7 +103,8 @@
 	import {
 		onShow,
 		onLoad,
-		onReady
+		onReady,
+		onPageScroll
 	} from "@dcloudio/uni-app"
 	import {
 		ref,
@@ -126,7 +117,7 @@
 	const avatar = 'https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png'
 	const cover = 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg'
 	const barHeight = ref(0);
-
+	const scrollTop = ref(0);
 	const userAvatar = reactive({
 		src: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg',
 		text: '无头像'					
@@ -173,19 +164,15 @@
 	const list2 = [
 
 		{
-			image: 'https://cdn.uviewui.com/uview/swiper/swiper3.png',
+			image: '../../static/banner1.jpg',
 			title: '昨夜星辰昨夜风，画楼西畔桂堂东',
 		},
 		{
-			image: 'https://cdn.uviewui.com/uview/swiper/swiper3.png',
+			image: '../../static/banner2.jpg',
 			title: '身无彩凤双飞翼，心有灵犀一点通',
 		},
 		{
-			image: 'https://cdn.uviewui.com/uview/swiper/swiper1.png',
-			title: '谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳'
-		},
-		{
-			image: 'https://cdn.uviewui.com/uview/swiper/swiper1.png',
+			image: '../../static/banner3.jpg',
 			title: '谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳'
 		}
 	]
@@ -350,6 +337,10 @@
 	    console.log('item', item);
 	}
 	
+	const onClick = () =>{
+		console.log("被点击");
+	}
+	
 	const scrollItemEmitsClick = (item, index, array) =>{
 		console.log(item);
 	}
@@ -360,6 +351,13 @@
 		barHeight.value = uni.getSystemInfoSync().statusBarHeight;
 	})
 	
+	
+	onPageScroll((e)=>{
+		scrollTop.value = e.scrollTop;
+		// #ifdef APP-NVUE
+		scrollTop.value = e.detail.scrollTop;
+		// #endif
+	})
 
 
 
@@ -394,12 +392,21 @@
 	.tabs-box{
 		background-color: #fff;
 	}
+	
+	.tabs-container{
+		margin-top: 10rpx;
+	}
+	
+	.scroll-box{
+		font-size: 20px;
+	}
 
 
 	.navbar{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		margin-top: 20rpx;
 		.avatar-box{
 			// margin-left: 10rpx;
 		}
@@ -410,14 +417,14 @@
 	}
 	
 	.swiper-container{
-		margin-top: 10rpx;
+		margin-top: 15rpx;
 		
 	}
 	
 	.card-actions{
 		display: flex;
 		justify-content: space-around;
-		
+		margin-top: 20rpx;
 	}
 	
 	.image-box{

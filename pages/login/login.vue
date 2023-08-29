@@ -171,7 +171,7 @@
 		&::after{
 			content: "";
 			display: inline-block;
-			border: 1px;
+			border: 0.5px;
 			border-color: #D9D9D9;;
 			border-style: dotted;
 			flex-grow: 1;
@@ -179,7 +179,7 @@
 		&::before{
 			content: "";
 			display: inline-block;
-			border: 1px;
+			border: 0.5px;
 			border-color: #D9D9D9;;
 			border-style: dotted;
 			flex-grow: 1;
@@ -189,6 +189,9 @@
 	.platforms-box{
 		width: 100%;
 		margin-top: 56rpx;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
 		button{
 			display: flex;
 			justify-content: center;
@@ -219,13 +222,13 @@
 	.weChat-box{
 		// border: 1px solid #EDEDED;
 		border-radius: 12px;
-		margin-top: 35.06rpx;
+		// margin-top: 35.06rpx;
 	}
 	
 	
 	.login-footer{
 		width: 100%;
-		margin-top: 191rpx;
+		margin-top: 150rpx;
 		text-align: center;
 	}
 	
